@@ -10,7 +10,14 @@ This folder is the color source of truth. Recolor the live site here. Do not hun
 
 ## Active palette: Red Field
 
-Live pages: the hub is all Crimson Field. Lane pages (`body.lane`) stay red by default. Put `class="band-light"` on selected sections to break up red-on-red. Signal Red is the CTA on white only.
+Live pages: the hub is all Crimson Field. Lane pages (`body.lane`) stay red by default. Put `class="band-light"` on selected sections to break up red-on-red — not every block. Signal Red is the CTA on white only.
+
+White breaks in use:
+
+- **plans** — Why CMDAA, Service Tiers, Document Requirements. Hero, disciplines, services list, CTAs, and footer stay red.
+- **dixon** — Deliverables and process. Hero, Pacific exemplar, CTA, and footer stay red.
+- **evaluation** — What evaluation covers. Hero, CTA, and footer stay red.
+- **legal** — The document body. Header and footer stay red.
 
 Named swatches in `theme.css`:
 
