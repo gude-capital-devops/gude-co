@@ -64,87 +64,6 @@
     margin-top: 12px;
   }
 
-  /* ── Contact widget ──────────────────────────────────────── */
-  .contact {
-    text-align: center;
-    max-width: 480px;
-    margin: 0 auto;
-  }
-
-  .contact form {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-  }
-
-  .contact input[type="email"] {
-    flex: 1;
-    min-width: 0;
-    padding: 14px 18px;
-    font-size: 14px;
-    font-family: inherit;
-    letter-spacing: 0.01em;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 6px;
-    background: rgba(255, 255, 255, 0.03);
-    color: var(--ink);
-    outline: none;
-    transition: border-color 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
-  }
-
-  .contact input[type="email"]::placeholder {
-    color: rgba(255, 255, 255, 0.42);
-  }
-
-  .contact input[type="email"]:hover {
-    border-color: rgba(255, 255, 255, 0.2);
-  }
-
-  .contact input[type="email"]:focus {
-    border-color: rgba(232, 160, 168, 0.55);
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 0 0 3px rgba(232, 160, 168, 0.14);
-  }
-
-  .contact button {
-    padding: 14px 28px;
-    font-size: 13px;
-    font-weight: 600;
-    font-family: inherit;
-    letter-spacing: 0.07em;
-    white-space: nowrap;
-    border: none;
-    border-radius: 6px;
-    background: var(--accent);
-    color: var(--bg);
-    cursor: pointer;
-    transition: background 0.22s ease, box-shadow 0.22s ease, transform 0.16s ease;
-  }
-
-  .contact button:hover {
-    background: #f0b3ba;
-    box-shadow: 0 6px 18px rgba(232, 160, 168, 0.18);
-    transform: translateY(-1px);
-  }
-
-  .contact button:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 8px rgba(232, 160, 168, 0.14);
-  }
-
-  .contact button:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(232, 160, 168, 0.28);
-  }
-
-  .contact .confirm {
-    display: none;
-    font-size: 14px;
-    letter-spacing: 0.02em;
-    color: var(--accent);
-    padding: 15px 0;
-  }
-
   /* ── Lane strip ────────────────────────────────────────────── */
   .lanes { margin: 72px 0 0; }
 
@@ -199,37 +118,35 @@
 
   .brands svg { display: block; height: 88px; width: auto; }
 
-  /* ── Bottom group: contact + footer links ──────────────────── */
-  .bottom { padding-top: 56px; }
+  /* ── Bottom group: footer links ────────────────────────────── */
+  .bottom { padding-top: 0; }
 
   /* ── Footer links ──────────────────────────────────────────── */
   .footer-links {
-    margin-top: 56px;
-    padding-top: 28px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 8px 0;
-    font-size: 13px;
+    gap: 4px 0;
+    font-size: 11px;
+    letter-spacing: 0.02em;
   }
 
   .footer-links a {
-    color: var(--muted);
+    color: rgba(255, 255, 255, 0.42);
     text-decoration: none;
-    padding: 0 18px;
+    padding: 0 12px;
   }
 
-  .footer-links a:hover { color: var(--accent); }
+  .footer-links a:hover { color: rgba(255, 255, 255, 0.65); }
 
-  .footer-links .sep { color: rgba(255, 255, 255, 0.25); }
+  .footer-links .sep { color: rgba(255, 255, 255, 0.22); }
 
   .legal {
-    margin-top: 18px;
+    margin-top: 14px;
     text-align: center;
-    font-size: 11px;
-    color: #8f8f8f;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.28);
     line-height: 1.6;
   }
 
@@ -240,11 +157,6 @@
     .lanes .label-row .label { white-space: normal; line-height: 1.8; }
     .brands { gap: 36px; }
     .brands svg { height: 72px; }
-    .bottom { padding-top: 44px; }
-    .contact form { flex-wrap: wrap; }
-    .contact input[type="email"] { flex: 1 1 180px; }
-    .contact button { flex: 1 1 auto; padding: 14px 22px; }
-    .footer-links { margin-top: 44px; }
   }
 </style>
 </head>
@@ -333,37 +245,18 @@
     </div>
   </section>
 
-  <!-- Bottom: contact widget above the footer links -->
+  <!-- Bottom: utility links (ICC pattern — contact is a text link, not a widget) -->
   <div class="bottom">
-    <div class="contact">
-      <form id="contact-form" action="#" method="post" novalidate>
-        <input type="email" name="email" id="email" placeholder="Email address" required aria-label="Email address">
-        <button type="submit">Contact us</button>
-      </form>
-      <div class="confirm" id="confirm">Thank you. We'll be in touch.</div>
-    </div>
-
     <nav class="footer-links" aria-label="Legal">
       <a href="/privacy">Privacy Policy</a><span class="sep">|</span>
       <a href="/terms">Terms of Use</a><span class="sep">|</span>
       <a href="/contact">Contact Us</a><span class="sep">|</span>
       <a href="/accessibility">Accessibility Policy</a>
     </nav>
-    <p class="legal">&copy; 2026 Gude. All rights reserved.</p>
+    <p class="legal">&copy; 2016 Gude. All rights reserved.</p>
   </div>
 
 </main>
-
-<script>
-  // Placeholder capture until a list provider is wired in (form action="#").
-  document.getElementById('contact-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    var email = document.getElementById('email');
-    if (!email.checkValidity()) { email.reportValidity(); return; }
-    this.style.display = 'none';
-    document.getElementById('confirm').style.display = 'block';
-  });
-</script>
 
 </body>
 </html>
