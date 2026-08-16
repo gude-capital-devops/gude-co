@@ -5,17 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gude</title>
 <meta name="description" content="Gude — engineering, plan review, and product evaluation. One brand, three lanes.">
+<link rel="stylesheet" href="brand/theme.css">
 <style>
-  :root {
-    --bg: #2b2b2b;
-    --bg-deep: #242424;
-    --ink: #ffffff;
-    --muted: #d9d9d9;
-    --logo-tone: #cfc6c8;
-    --accent: #e8a0a8;
-    --hairline: rgba(232, 160, 168, 0.28);
-  }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   html, body { height: 100%; }
@@ -93,7 +84,7 @@
     text-decoration: none;
   }
 
-  .lanes .label-row .label a:hover { color: var(--accent); }
+  .lanes .label-row .label a:hover { color: var(--accent-hover); }
 
   .lanes .label-row .label .sep {
     color: var(--muted);
@@ -155,9 +146,9 @@
   }
 
   .contact input[type="email"]:focus {
-    border-color: rgba(232, 160, 168, 0.55);
+    border-color: var(--hairline);
     background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 0 0 3px rgba(232, 160, 168, 0.14);
+    box-shadow: 0 0 0 3px var(--accent-glow);
   }
 
   .contact button {
@@ -176,19 +167,19 @@
   }
 
   .contact button:hover {
-    background: #f0b3ba;
-    box-shadow: 0 6px 18px rgba(232, 160, 168, 0.18);
+    background: var(--accent-hover);
+    box-shadow: 0 6px 18px var(--btn-shadow);
     transform: translateY(-1px);
   }
 
   .contact button:active {
     transform: translateY(0);
-    box-shadow: 0 2px 8px rgba(232, 160, 168, 0.14);
+    box-shadow: 0 2px 8px var(--btn-shadow);
   }
 
   .contact button:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(232, 160, 168, 0.28);
+    box-shadow: 0 0 0 3px var(--accent-glow);
   }
 
   .contact .confirm {
@@ -263,68 +254,89 @@
     <div class="label-row">
       <span class="line"></span>
       <span class="label">
-        <a href="https://plans.gude.co">Plan Review</a><span class="sep">+</span><a href="https://dixon.gude.co">Engineering</a><span class="sep">+</span><a href="https://evaluation.gude.co">Evaluation</a>
+        <a href="https://evaluation.gude.co">Evaluation</a><span class="sep">+</span><a href="https://dixon.gude.co">Engineering</a><span class="sep">+</span><a href="https://plans.gude.co">Plan Review</a>
       </span>
       <span class="line"></span>
     </div>
 
     <div class="brands">
 
-      <!-- Product READY — evaluation & future certification -->
+      <!-- Product READY — evaluation & future certification
+           Construction (per GENERAL CODE): lighter tracked word over a heavy
+           boxed word; top word width-matched to the box, box stroke matched
+           to the light word's letter stroke, snug even padding inside box. -->
       <a href="https://evaluation.gude.co" aria-label="Product READY — evaluation and certification">
-        <svg viewBox="0 0 240 120" xmlns="http://www.w3.org/2000/svg" role="img">
+        <svg viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg" role="img">
           <title>Product READY</title>
-          <g fill="#cfc6c8">
-            <text x="120" y="38" text-anchor="middle"
-                  font-family="Arial, Helvetica, sans-serif" font-size="30"
-                  font-weight="400" letter-spacing="6">PRODUCT</text>
-            <rect x="30" y="52" width="180" height="52" fill="none" stroke="#cfc6c8" stroke-width="4"/>
-            <text x="120" y="90" text-anchor="middle"
-                  font-family="Arial, Helvetica, sans-serif" font-size="34"
-                  font-weight="800" letter-spacing="8">READY</text>
+          <g fill="currentColor">
+            <text x="113" y="44" text-anchor="middle"
+                  font-family="Arial, Helvetica, sans-serif" font-size="26"
+                  font-weight="700" letter-spacing="7">PRODUCT</text>
+            <rect x="20" y="56" width="180" height="52" fill="none" stroke="currentColor" stroke-width="4"/>
+            <text x="112" y="96" text-anchor="middle"
+                  font-family="'Arial Black', Arial, Helvetica, sans-serif" font-size="40"
+                  font-weight="900" letter-spacing="4">READY</text>
           </g>
         </svg>
       </a>
 
-      <!-- GUDE / DIXON — engineering (sign lockup) -->
+      <!-- GUDE / DIXON — engineering (layered lockup)
+           Construction (per ICC SKGA layering): background GUDE emblem —
+           structural arch with grid ribs — partially occluded by a heavier
+           foreground DIXON panel filled with the page background, so DIXON
+           reads as sitting in front of / inside of Gude. Stacked two-line
+           name right, centered on the panel mass. -->
       <a href="https://dixon.gude.co" aria-label="Dixon Engineering — a Gude company">
-        <svg viewBox="0 0 430 120" xmlns="http://www.w3.org/2000/svg" role="img">
+        <svg viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg" role="img">
           <title>Dixon Engineering — a Gude company</title>
-          <g fill="#cfc6c8" stroke="#cfc6c8">
-            <!-- arc canopy with GUDE -->
-            <path d="M 20 46 A 52 40 0 0 1 124 46" fill="none" stroke-width="4"/>
-            <text x="72" y="40" text-anchor="middle" stroke="none"
-                  font-family="Arial, Helvetica, sans-serif" font-size="19"
-                  font-weight="700" letter-spacing="3">GUDE</text>
-            <!-- sign panel with DIXON -->
-            <rect x="26" y="50" width="92" height="34" fill="none" stroke-width="4"/>
-            <text x="72" y="74" text-anchor="middle" stroke="none"
-                  font-family="Arial, Helvetica, sans-serif" font-size="17"
-                  font-weight="800" letter-spacing="2">DIXON</text>
-            <!-- posts -->
-            <line x1="44" y1="84" x2="44" y2="106" stroke-width="4"/>
-            <line x1="100" y1="84" x2="100" y2="106" stroke-width="4"/>
-          </g>
-          <text x="140" y="72" fill="#cfc6c8" stroke="none"
-                font-family="Arial, Helvetica, sans-serif" font-size="21"
-                font-weight="600" letter-spacing="1.5">DIXON ENGINEERING</text>
+          <!-- background layer: GUDE tile (lighter stroke = behind) with a thin
+               inner inset line; the foreground panel visibly cuts the inset,
+               selling the occlusion -->
+          <rect x="30" y="16" width="84" height="84" fill="none" stroke="currentColor" stroke-width="4"/>
+          <rect x="38" y="24" width="68" height="68" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <text x="72" y="45" text-anchor="middle" fill="currentColor"
+                font-family="Arial, Helvetica, sans-serif" font-size="15"
+                font-weight="800" letter-spacing="2">GUDE</text>
+          <!-- foreground layer: DIXON panel, bg fill occludes the tile,
+               juts past the tile's left edge (heavier stroke = in front) -->
+          <rect x="12" y="58" width="78" height="32" fill="var(--bg)" stroke="currentColor" stroke-width="5"/>
+          <text x="51" y="80" text-anchor="middle" fill="currentColor"
+                font-family="Arial, Helvetica, sans-serif" font-size="15"
+                font-weight="800" letter-spacing="2">DIXON</text>
+          <!-- stacked name: heavy DIXON width-matched over tracked ENGINEERING,
+               block optically centered on the emblem mass -->
+          <text x="132" y="57" fill="currentColor" stroke="none"
+                font-family="'Arial Black', Arial, Helvetica, sans-serif" font-size="30"
+                font-weight="900" textLength="150" lengthAdjust="spacing">DIXON</text>
+          <text x="132" y="79" fill="currentColor" stroke="none"
+                font-family="Arial, Helvetica, sans-serif" font-size="19"
+                font-weight="700" textLength="150" lengthAdjust="spacing">ENGINEERING</text>
         </svg>
       </a>
 
-      <!-- CMDAA — house monogram -->
-      <a href="https://plans.gude.co" aria-label="CMDAA — plan review and approval">
-        <svg viewBox="0 0 240 120" xmlns="http://www.w3.org/2000/svg" role="img">
-          <title>CMDAA</title>
-          <g stroke="#cfc6c8" fill="none" stroke-width="5" stroke-linecap="square">
-            <!-- roofline -->
-            <polyline points="34,58 120,18 206,58"/>
-            <!-- eave returns -->
-            <line x1="34" y1="58" x2="34" y2="70"/>
-            <line x1="206" y1="58" x2="206" y2="70"/>
-          </g>
-          <text x="120" y="98" text-anchor="middle" fill="#cfc6c8"
-                font-family="Arial, Helvetica, sans-serif" font-size="40"
-                font-weight="800" letter-spacing="6">CMDAA</text>
+      <!-- CALIFORNIA MODULAR (CMDAA) — housed word lockup
+           Construction (per GENERAL CODE hierarchy under the NTA roof):
+           light tracked CALIFORNIA over heavy MODULAR, both width-matched to
+           one measure; roofline spans the lockup with stepped stubs bracketing
+           its top outer corners; thinner ground stroke registered to the
+           roof feet closes the house. -->
+      <a href="https://plans.gude.co" aria-label="California Modular (CMDAA) — plan review and approval">
+        <svg viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg" role="img">
+          <title>California Modular — CMDAA</title>
+          <!-- ground stroke (thinner = behind), width registered to the roof feet -->
+          <line x1="20" y1="104" x2="200" y2="104" stroke="currentColor"
+                stroke-width="4" stroke-linecap="square"/>
+          <!-- roofline; the stepped ends drop past the top line's cap height,
+               bracketing the lockup's outer corners -->
+          <polyline points="20,62 20,44 110,12 200,44 200,62" stroke="currentColor" fill="none"
+                    stroke-width="8" stroke-linecap="square"/>
+          <!-- width-matched two-line lockup -->
+          <text x="29" y="58" fill="currentColor"
+                font-family="Arial, Helvetica, sans-serif" font-size="15"
+                font-weight="700" textLength="162" lengthAdjust="spacing">CALIFORNIA</text>
+          <text x="29" y="90" fill="currentColor"
+                font-family="'Arial Black', Arial, Helvetica, sans-serif" font-size="28"
+                font-weight="900" textLength="162" lengthAdjust="spacing">MODULAR</text>
         </svg>
       </a>
 

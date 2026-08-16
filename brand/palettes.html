@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>gude.co color schemes</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body, svg, .swatch, .hero, .btn, .tag, .hero-cta {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #ffffff;
+      color: #171a1d;
+    }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 48px 28px 80px; }
+    h1 { font-size: 32px; margin: 0 0 8px; letter-spacing: -0.02em; }
+    .lede { font-family: Calibri, Arial, sans-serif; color: #586166; font-size: 16px; line-height: 1.5; margin: 0 0 40px; max-width: 720px; }
+    h2 { font-size: 22px; margin: 0; }
+    .meta { font-family: Calibri, Arial, sans-serif; font-size: 13px; color: #586166; margin-top: 6px; line-height: 1.45; }
+    .tag {
+      display: inline-block;
+      font-family: Calibri, Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #ffffff;
+      padding: 4px 8px;
+      margin-left: 10px;
+      vertical-align: middle;
+      position: relative;
+    }
+    .tag svg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
+    .tag span { position: relative; z-index: 1; }
+    .palette { margin-bottom: 56px; page-break-inside: avoid; }
+    .swatches { display: grid; grid-template-columns: repeat(6, 1fr); margin-top: 16px; }
+    .swatch { position: relative; height: 190px; overflow: hidden; outline: 1px solid #e4e6e8; }
+    .swatch > svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    .swatch .label {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .swatch .name { font-family: Calibri, Arial, sans-serif; font-size: 14px; font-weight: 700; }
+    .swatch .hex { font-family: Consolas, "Courier New", monospace; font-size: 13px; margin-top: 2px; }
+    .swatch .role { font-family: Calibri, Arial, sans-serif; font-size: 12px; margin-top: 8px; opacity: 0.9; }
+    .hero { position: relative; min-height: 280px; }
+    .hero > svg.fill { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    .hero-inner { position: relative; z-index: 1; padding: 28px; }
+    .hero-top { display: flex; justify-content: space-between; align-items: center; font-family: Calibri, Arial, sans-serif; font-size: 13px; }
+    .hero-brand { font-weight: 700; letter-spacing: 0.12em; }
+    .hero-nav span { margin-left: 18px; opacity: 0.75; }
+    .hero-cta, .btn {
+      display: inline-block;
+      position: relative;
+      padding: 8px 12px;
+      font-weight: 700;
+      font-size: 12px;
+      font-family: Calibri, Arial, sans-serif;
+    }
+    .hero-cta { margin-left: 18px; }
+    .hero-cta svg, .btn svg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
+    .hero-cta span, .btn span { position: relative; z-index: 1; }
+    .btn { font-size: 13px; padding: 10px 14px; margin-right: 8px; }
+    .eyebrow { font-family: Calibri, Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-top: 28px; }
+    .hero h3 { font-size: 26px; margin: 10px 0 0; max-width: 540px; line-height: 1.25; }
+    .hero p { font-family: Calibri, Arial, sans-serif; font-size: 15px; max-width: 480px; line-height: 1.5; margin: 10px 0 18px; }
+    .btns { font-family: Calibri, Arial, sans-serif; }
+    .two { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 0; margin-top: 16px; border: 1px solid #e4e6e8; }
+    @media (max-width: 800px) {
+      .swatches, .two { grid-template-columns: 1fr; }
+      .swatch { height: 140px; }
+    }
+    @media print {
+      body { background: #ffffff; }
+      .wrap { padding: 12px; }
+      .palette { break-inside: avoid; page-break-inside: avoid; }
+      .swatch { height: 160px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>gude.co color schemes</h1>
+    <p class="lede">v3 palette sheet. This file lives next to the site at <code>gude.co/brand/palettes.html</code>. Live tokens are in <code>theme.css</code> — currently <strong>Red Field</strong> on the landing pages (Crimson Field ground, white type, white buttons). Signal Red (#C23034) is a true mid red — not orange, not burgundy. Do not put Signal Red on Crimson Field. SVG fills so color survives print-to-PDF.</p>
+
+    <section class="palette">
+      <h2>1. Red Field <span class="tag"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#1C0D0F"/></svg><span>Recommended</span></span></h2>
+      <p class="meta">A red scale. Crimson Field carries the page. Signal Red is the mark on white. Do not put Signal Red on Crimson Field — contrast collapses.</p>
+      <div class="swatches">
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#1C0D0F"/></svg><div class="label" style="color:#FFFFFF"><div class="name">Garnet Black</div><div class="hex">#1C0D0F</div><div class="role">Headings on white, fine type</div></div></div>
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#5A171B"/></svg><div class="label" style="color:#FFFFFF"><div class="name">Crimson Field</div><div class="hex">#5A171B</div><div class="role">Hero, footer, dark bands</div></div></div>
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#8C2226"/></svg><div class="label" style="color:#FFFFFF"><div class="name">Port Red</div><div class="hex">#8C2226</div><div class="role">Section marks, hover</div></div></div>
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#C23034"/></svg><div class="label" style="color:#FFFFFF"><div class="name">Signal Red</div><div class="hex">#C23034</div><div class="role">Logo, CTA on white</div></div></div>
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#FFFFFF"/></svg><div class="label" style="color:#1C0D0F"><div class="name">White</div><div class="hex">#FFFFFF</div><div class="role">Type on red, page alternate</div></div></div>
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#4A4546"/></svg><div class="label" style="color:#FFFFFF"><div class="name">Iron Ash</div><div class="hex">#4A4546</div><div class="role">Body copy on white</div></div></div>
+      </div>
+      <div class="two">
+        <div class="hero">
+          <svg class="fill" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#FFFFFF"/></svg>
+          <div class="hero-inner" style="color:#1C0D0F">
+            <div class="hero-top">
+              <div class="hero-brand">GUDE</div>
+              <div class="hero-nav">
+                <span>Engineering</span><span>DAA</span><span>Approvals</span>
+                <span class="hero-cta" style="color:#FFFFFF"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#C23034"/></svg><span>Talk to a PE</span></span>
+              </div>
+            </div>
+            <div class="eyebrow" style="color:#8C2226">Structural engineering · delegated plan review</div>
+            <h3>Approval-ready engineering for modular and factory-built work.</h3>
+            <p style="color:#4A4546">PE support, evidence gaps, and a defensible path through plan review — licensed in CA, IA, and NY.</p>
+            <div class="btns">
+              <span class="btn" style="color:#FFFFFF"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#C23034"/></svg><span>Start a project</span></span>
+              <span class="btn" style="color:#1C0D0F"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#F3F3F3"/></svg><span>How DAA works</span></span>
+            </div>
+          </div>
+        </div>
+        <div class="hero">
+          <svg class="fill" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#5A171B"/></svg>
+          <div class="hero-inner" style="color:#FFFFFF">
+            <div class="eyebrow" style="color:#D0C8C8">Crimson Field / hero variant</div>
+            <h3>Mostly red. White type on the field.</h3>
+            <p style="color:#D0C8C8">Use white buttons on Crimson Field. Signal Red is for white pages only.</p>
+            <div class="btns">
+              <span class="btn" style="color:#5A171B"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#FFFFFF"/></svg><span>Request a review</span></span>
+              <span class="btn" style="color:#FFFFFF"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#8C2226"/></svg><span>Licenses</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="palette">
+      <h2>2. Signal Red</h2>
+      <p class="meta">True mid red on white. Night Iron for type. One red, used sparingly.</p>
+      <div class="swatches">
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#171A1D"/></svg><div class="label" style="color:#FFFFFF"><div class="name">Night Iron</div><div class="hex">#171A1D</div><div class="role">Headings, nav, footer</div></div></div>
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#C23034"/></svg><div class="label" style="color:#FFFFFF"><div class="name">Signal Red</div><div class="hex">#C23034</div><div class="role">Brand, logo, primary CTA</div></div></div>
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#FFFFFF"/></svg><div class="label" style="color:#171A1D"><div class="name">White</div><div class="hex">#FFFFFF</div><div class="role">Page background</div></div></div>
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#4A4F54"/></svg><div class="label" style="color:#FFFFFF"><div class="name">Iron Ash</div><div class="hex">#4A4F54</div><div class="role">Body copy</div></div></div>
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#5C6B78"/></svg><div class="label" style="color:#FFFFFF"><div class="name">Blued Steel</div><div class="hex">#5C6B78</div><div class="role">Rules, icons</div></div></div>
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#F3F4F5"/></svg><div class="label" style="color:#171A1D"><div class="name">Cool Panel</div><div class="hex">#F3F4F5</div><div class="role">Cards, section bands</div></div></div>
+      </div>
+      <div class="two">
+        <div class="hero">
+          <svg class="fill" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#FFFFFF"/></svg>
+          <div class="hero-inner" style="color:#171A1D">
+            <div class="hero-top">
+              <div class="hero-brand">GUDE</div>
+              <div class="hero-nav">
+                <span>Engineering</span><span>DAA</span><span>Approvals</span>
+                <span class="hero-cta" style="color:#FFFFFF"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#C23034"/></svg><span>Talk to a PE</span></span>
+              </div>
+            </div>
+            <div class="eyebrow" style="color:#C23034">Structural engineering · delegated plan review</div>
+            <h3>Approval-ready engineering for modular and factory-built work.</h3>
+            <p style="color:#4A4F54">PE support, evidence gaps, and a defensible path through plan review — licensed in CA, IA, and NY.</p>
+            <div class="btns">
+              <span class="btn" style="color:#FFFFFF"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#C23034"/></svg><span>Start a project</span></span>
+              <span class="btn" style="color:#171A1D"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#F3F4F5"/></svg><span>How DAA works</span></span>
+            </div>
+          </div>
+        </div>
+        <div class="hero">
+          <svg class="fill" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#171A1D"/></svg>
+          <div class="hero-inner" style="color:#FFFFFF">
+            <div class="eyebrow" style="color:#5C6B78">Dark footer / hero variant</div>
+            <h3>Same palette, inverted.</h3>
+            <p style="color:#C5C9CC">Night Iron footer. Signal Red is the only action color. Blued Steel for license lines.</p>
+            <div class="btns">
+              <span class="btn" style="color:#FFFFFF"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#C23034"/></svg><span>Request a review</span></span>
+              <span class="btn" style="color:#FFFFFF"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#5C6B78"/></svg><span>Licenses</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="palette">
+      <h2>3. Verdigris</h2>
+      <p class="meta">Well-water teal, not forest green. Signal Red is the only action color.</p>
+      <div class="swatches">
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#1B3235"/></svg><div class="label" style="color:#FFFFFF"><div class="name">Well Water</div><div class="hex">#1B3235</div><div class="role">Headings, nav, footer</div></div></div>
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#3A6E72"/></svg><div class="label" style="color:#FFFFFF"><div class="name">Verdigris</div><div class="hex">#3A6E72</div><div class="role">Brand, links, section marks</div></div></div>
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#FFFFFF"/></svg><div class="label" style="color:#1B3235"><div class="name">White</div><div class="hex">#FFFFFF</div><div class="role">Page background</div></div></div>
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#4C5556"/></svg><div class="label" style="color:#FFFFFF"><div class="name">Stone Mix</div><div class="hex">#4C5556</div><div class="role">Body copy</div></div></div>
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#C23034"/></svg><div class="label" style="color:#FFFFFF"><div class="name">Signal Red</div><div class="hex">#C23034</div><div class="role">Primary CTA</div></div></div>
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#F2F4F4"/></svg><div class="label" style="color:#1B3235"><div class="name">Cool Panel</div><div class="hex">#F2F4F4</div><div class="role">Cards, service tiles</div></div></div>
+      </div>
+      <div class="two">
+        <div class="hero">
+          <svg class="fill" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#FFFFFF"/></svg>
+          <div class="hero-inner" style="color:#1B3235">
+            <div class="hero-top">
+              <div class="hero-brand">GUDE</div>
+              <div class="hero-nav">
+                <span>Engineering</span><span>DAA</span><span>Approvals</span>
+                <span class="hero-cta" style="color:#FFFFFF"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#C23034"/></svg><span>Talk to a PE</span></span>
+              </div>
+            </div>
+            <div class="eyebrow" style="color:#3A6E72">Structural engineering · delegated plan review</div>
+            <h3>Approval-ready engineering for modular and factory-built work.</h3>
+            <p style="color:#4C5556">PE support, evidence gaps, and a defensible path through plan review — licensed in CA, IA, and NY.</p>
+            <div class="btns">
+              <span class="btn" style="color:#FFFFFF"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#C23034"/></svg><span>Start a project</span></span>
+              <span class="btn" style="color:#1B3235"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#F2F4F4"/></svg><span>How DAA works</span></span>
+            </div>
+          </div>
+        </div>
+        <div class="hero">
+          <svg class="fill" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#1B3235"/></svg>
+          <div class="hero-inner" style="color:#FFFFFF">
+            <div class="eyebrow" style="color:#C23034">Dark footer / hero variant</div>
+            <h3>Same palette, inverted.</h3>
+            <p style="color:#C3CDCE">Well Water footer. Verdigris for labels, Signal Red for the action.</p>
+            <div class="btns">
+              <span class="btn" style="color:#FFFFFF"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#C23034"/></svg><span>Request a review</span></span>
+              <span class="btn" style="color:#FFFFFF"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#3A6E72"/></svg><span>Licenses</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="palette">
+      <h2>4. Manganese</h2>
+      <p class="meta">Instrument blue-gray, not navy and not blueprint. Gauge-face civic, with red as the action.</p>
+      <div class="swatches">
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#232730"/></svg><div class="label" style="color:#FFFFFF"><div class="name">Instrument</div><div class="hex">#232730</div><div class="role">Headings, nav, footer</div></div></div>
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#46566C"/></svg><div class="label" style="color:#FFFFFF"><div class="name">Manganese</div><div class="hex">#46566C</div><div class="role">Brand, links</div></div></div>
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#FFFFFF"/></svg><div class="label" style="color:#232730"><div class="name">White</div><div class="hex">#FFFFFF</div><div class="role">Page background</div></div></div>
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#5A6067"/></svg><div class="label" style="color:#FFFFFF"><div class="name">Gauge Gray</div><div class="hex">#5A6067</div><div class="role">Body copy</div></div></div>
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#C23034"/></svg><div class="label" style="color:#FFFFFF"><div class="name">Signal Red</div><div class="hex">#C23034</div><div class="role">Primary CTA</div></div></div>
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#F3F4F6"/></svg><div class="label" style="color:#232730"><div class="name">Cool Panel</div><div class="hex">#F3F4F6</div><div class="role">Cards, spec tables</div></div></div>
+      </div>
+      <div class="two">
+        <div class="hero">
+          <svg class="fill" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#FFFFFF"/></svg>
+          <div class="hero-inner" style="color:#232730">
+            <div class="hero-top">
+              <div class="hero-brand">GUDE</div>
+              <div class="hero-nav">
+                <span>Engineering</span><span>DAA</span><span>Approvals</span>
+                <span class="hero-cta" style="color:#FFFFFF"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#C23034"/></svg><span>Talk to a PE</span></span>
+              </div>
+            </div>
+            <div class="eyebrow" style="color:#46566C">Structural engineering · delegated plan review</div>
+            <h3>Approval-ready engineering for modular and factory-built work.</h3>
+            <p style="color:#5A6067">PE support, evidence gaps, and a defensible path through plan review — licensed in CA, IA, and NY.</p>
+            <div class="btns">
+              <span class="btn" style="color:#FFFFFF"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#C23034"/></svg><span>Start a project</span></span>
+              <span class="btn" style="color:#232730"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#F3F4F6"/></svg><span>How DAA works</span></span>
+            </div>
+          </div>
+        </div>
+        <div class="hero">
+          <svg class="fill" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#232730"/></svg>
+          <div class="hero-inner" style="color:#FFFFFF">
+            <div class="eyebrow" style="color:#C23034">Dark footer / hero variant</div>
+            <h3>Same palette, inverted.</h3>
+            <p style="color:#C8CCD2">Instrument footer. Manganese for labels, Signal Red for the action.</p>
+            <div class="btns">
+              <span class="btn" style="color:#FFFFFF"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#C23034"/></svg><span>Request a review</span></span>
+              <span class="btn" style="color:#FFFFFF"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#46566C"/></svg><span>Licenses</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="palette">
+      <h2>5. Machine Olive</h2>
+      <p class="meta">Machinery-finish olive, not eco-green. Quiet shop authority; Signal Red does the talking.</p>
+      <div class="swatches">
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#1B1D19"/></svg><div class="label" style="color:#FFFFFF"><div class="name">Tool Black</div><div class="hex">#1B1D19</div><div class="role">Headings, nav, footer</div></div></div>
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#5A6450"/></svg><div class="label" style="color:#FFFFFF"><div class="name">Machine Olive</div><div class="hex">#5A6450</div><div class="role">Brand, links</div></div></div>
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#FFFFFF"/></svg><div class="label" style="color:#1B1D19"><div class="name">White</div><div class="hex">#FFFFFF</div><div class="role">Page background</div></div></div>
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#585B55"/></svg><div class="label" style="color:#FFFFFF"><div class="name">Dust Gray</div><div class="hex">#585B55</div><div class="role">Body copy</div></div></div>
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#C23034"/></svg><div class="label" style="color:#FFFFFF"><div class="name">Signal Red</div><div class="hex">#C23034</div><div class="role">Primary CTA</div></div></div>
+        <div class="swatch"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#F3F4F4"/></svg><div class="label" style="color:#1B1D19"><div class="name">Cool Panel</div><div class="hex">#F3F4F4</div><div class="role">Cards, quote bands</div></div></div>
+      </div>
+      <div class="two">
+        <div class="hero">
+          <svg class="fill" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#FFFFFF"/></svg>
+          <div class="hero-inner" style="color:#1B1D19">
+            <div class="hero-top">
+              <div class="hero-brand">GUDE</div>
+              <div class="hero-nav">
+                <span>Engineering</span><span>DAA</span><span>Approvals</span>
+                <span class="hero-cta" style="color:#FFFFFF"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#C23034"/></svg><span>Talk to a PE</span></span>
+              </div>
+            </div>
+            <div class="eyebrow" style="color:#5A6450">Structural engineering · delegated plan review</div>
+            <h3>Approval-ready engineering for modular and factory-built work.</h3>
+            <p style="color:#585B55">PE support, evidence gaps, and a defensible path through plan review — licensed in CA, IA, and NY.</p>
+            <div class="btns">
+              <span class="btn" style="color:#FFFFFF"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#C23034"/></svg><span>Start a project</span></span>
+              <span class="btn" style="color:#1B1D19"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#F3F4F4"/></svg><span>How DAA works</span></span>
+            </div>
+          </div>
+        </div>
+        <div class="hero">
+          <svg class="fill" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#1B1D19"/></svg>
+          <div class="hero-inner" style="color:#FFFFFF">
+            <div class="eyebrow" style="color:#C23034">Dark footer / hero variant</div>
+            <h3>Same palette, inverted.</h3>
+            <p style="color:#C6C8C3">Tool Black footer. Olive for labels, Signal Red for the action.</p>
+            <div class="btns">
+              <span class="btn" style="color:#FFFFFF"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#C23034"/></svg><span>Request a review</span></span>
+              <span class="btn" style="color:#FFFFFF"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><rect width="100%" height="100%" fill="#5A6450"/></svg><span>Licenses</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

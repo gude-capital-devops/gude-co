@@ -1,0 +1,42 @@
+/* gude.co live tokens
+   Active palette: Red Field (v3, recommended)
+   Source of truth for hex names: brand/palettes.html
+
+   These pages are a Crimson Field (dark red) layout.
+   Signal Red (#C23034) is for marks/CTAs on WHITE only — do not put it on Crimson Field.
+
+   Recolor the live site by editing this file. Do not hunt hex values in each HTML page.
+*/
+
+:root {
+  /* Named swatches from Red Field */
+  --garnet-black: #1C0D0F;
+  --crimson-field: #5A171B;
+  --port-red: #8C2226;
+  --signal-red: #C23034;
+  --white: #FFFFFF;
+  --iron-ash: #4A4546;
+  --field-muted: #D0C8C8;
+
+  /* Mapped into the landing-page variables already in use */
+  --bg: var(--crimson-field);
+  --bg-deep: var(--garnet-black);
+  --bg-band: var(--port-red);
+  --ink: var(--white);
+  --muted: var(--field-muted);
+  --logo-tone: #E4D6D6;
+  --accent: var(--white);
+  --accent-hover: var(--field-muted);
+  --hairline: rgba(255, 255, 255, 0.22);
+  --card-border: rgba(255, 255, 255, 0.14);
+  --accent-glow: rgba(255, 255, 255, 0.22);
+  --btn-shadow: rgba(28, 13, 15, 0.28);
+  --accent-soft: rgba(255, 255, 255, 0.08);
+  --accent-border: rgba(255, 255, 255, 0.35);
+}
+
+/* Lockups inherit logo-tone when they use fill/stroke="currentColor" */
+.brands svg,
+.hero-mark svg {
+  color: var(--logo-tone);
+}

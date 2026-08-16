@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engineering Services — Dixon Engineering</title>
+<meta name="description" content="Dixon Engineering — multidisciplinary licensed professional engineering for design-build firms: structural detail libraries, calculation packages, plan review, and permitting support.">
+<link rel="stylesheet" href="../brand/theme.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+  }
+
+  a { color: var(--accent); }
+  a:hover { color: var(--accent-hover); }
+
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .site-header {
+    border-bottom: 1px solid var(--hairline);
+    background: var(--bg-deep);
+  }
+
+  .site-header .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .wordmark { text-decoration: none; color: var(--ink); }
+
+  .wordmark .gude {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    line-height: 1;
+    display: block;
+  }
+
+  .wordmark .rule {
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+    margin-top: 8px;
+  }
+
+  .nav-lanes {
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+  }
+
+  .nav-lanes a { color: var(--ink); text-decoration: none; }
+  .nav-lanes a:hover { color: var(--accent-hover); }
+  .nav-lanes .sep { color: rgba(255,255,255,0.35); padding: 0 8px; }
+  .nav-lanes .here { color: var(--muted); }
+
+  .hero {
+    background: var(--bg-band);
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .hero .wrap {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 48px;
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .hero-mark svg { display: block; height: 100px; width: auto; }
+
+  .hero h1 {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  .hero .lede {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 640px;
+    margin-bottom: 12px;
+  }
+
+  .hero-actions {
+    margin-bottom: 32px;
+  }
+
+  .hero-quote {
+    max-width: 620px;
+    border-left: 3px solid var(--accent);
+    padding: 0 0 0 22px;
+    margin: 0;
+  }
+
+  .hero-quote p {
+    font-size: 15px;
+    font-style: italic;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+
+  .hero-quote cite {
+    font-size: 13px;
+    font-style: normal;
+    color: var(--logo-tone);
+    letter-spacing: 0.02em;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 14px 28px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-decoration: none;
+    border-radius: 6px;
+    background: var(--accent);
+    color: var(--bg);
+    transition: background 0.22s ease, box-shadow 0.22s ease, transform 0.16s ease;
+  }
+
+  .btn:hover {
+    background: var(--accent-hover);
+    color: var(--bg);
+    box-shadow: 0 6px 18px var(--btn-shadow);
+    transform: translateY(-1px);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-left: 12px;
+  }
+
+  .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--ink);
+    border-color: var(--hairline);
+    transform: none;
+    box-shadow: none;
+  }
+
+  section { padding: 64px 0; }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 36px;
+  }
+
+  .section-label .line {
+    flex: 1;
+    height: 1px;
+    background: var(--hairline);
+  }
+
+  .section-label h2 {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: var(--logo-tone);
+  }
+
+  .intro {
+    font-size: 15px;
+    color: var(--muted);
+    max-width: 820px;
+    margin-bottom: 28px;
+  }
+
+  .stat-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--hairline);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 32px;
+  }
+
+  .stat {
+    background: var(--bg-deep);
+    padding: 24px 20px;
+    text-align: center;
+  }
+
+  .stat .num {
+    display: block;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .stat .lbl {
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.48);
+    line-height: 1.45;
+  }
+
+  .stat .src {
+    display: block;
+    margin-top: 8px;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.28);
+  }
+
+  .deliver-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .deliver {
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 28px 24px;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .deliver h3 {
+    font-size: 16px;
+    letter-spacing: 0.03em;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+
+  .deliver p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  .exemplar-band {
+    background: var(--bg-band);
+    border-top: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .exemplar-band .kicker {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .exemplar-band h2 {
+    font-size: clamp(24px, 3.2vw, 34px);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    max-width: 720px;
+    margin-bottom: 20px;
+  }
+
+  .manifesto {
+    border-left: 3px solid var(--accent);
+    padding: 24px 0 24px 28px;
+    margin: 32px 0;
+    max-width: 780px;
+  }
+
+  .manifesto p {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 14px;
+    line-height: 1.7;
+  }
+
+  .manifesto p:last-child { margin-bottom: 0; }
+
+  .manifesto strong { color: var(--logo-tone); font-weight: 600; }
+
+  .system-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  .system-list span {
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: var(--logo-tone);
+    border: 1px solid var(--card-border);
+    padding: 6px 12px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .flow {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--hairline);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 28px;
+  }
+
+  .flow-step {
+    background: var(--bg-deep);
+    padding: 28px 22px;
+  }
+
+  .flow-step .step-num {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .flow-step h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  .flow-step p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  .cta-band {
+    background: var(--bg-band);
+    border-top: 1px solid var(--hairline);
+    text-align: center;
+    padding: 56px 40px;
+  }
+
+  .cta-band h2 {
+    font-size: 22px;
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+  }
+
+  .cta-band p {
+    color: var(--muted);
+    font-size: 15px;
+    max-width: 560px;
+    margin: 0 auto 28px;
+  }
+
+  .contact-block {
+    margin-top: 32px;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  .contact-block strong { color: var(--logo-tone); font-weight: 600; }
+
+  .site-footer {
+    padding: 44px 40px 32px;
+    text-align: center;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px 0;
+    font-size: 11px;
+    letter-spacing: 0.02em;
+  }
+
+  .footer-links a {
+    color: rgba(255, 255, 255, 0.42);
+    text-decoration: none;
+    padding: 0 12px;
+  }
+
+  .footer-links a:hover { color: rgba(255, 255, 255, 0.65); }
+  .footer-links .sep { color: rgba(255, 255, 255, 0.22); }
+
+  .legal {
+    margin-top: 14px;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.28);
+  }
+
+  @media (max-width: 900px) {
+    .hero .wrap { grid-template-columns: 1fr; }
+    .hero-mark { order: -1; }
+    .deliver-grid { grid-template-columns: 1fr; }
+    .stat-strip { grid-template-columns: repeat(2, 1fr); }
+    .flow { grid-template-columns: 1fr 1fr; }
+    .btn-outline { margin-left: 0; margin-top: 12px; display: inline-block; }
+  }
+
+  @media (max-width: 520px) {
+    .wrap { padding: 0 24px; }
+    section { padding: 48px 0; }
+    .flow { grid-template-columns: 1fr; }
+    .stat-strip { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="https://gude.co" aria-label="Gude">
+      <span class="gude">GUDE</span>
+      <span class="rule"></span>
+    </a>
+    <nav class="nav-lanes" aria-label="Service lanes">
+      <a href="https://evaluation.gude.co">Evaluation</a><span class="sep">+</span>
+      <span class="here">Engineering</span><span class="sep">+</span>
+      <a href="https://plans.gude.co">Plan Review</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap">
+    <div>
+      <h1 id="hero-title">Multidisciplinary Engineering Services</h1>
+      <p class="lede">Dixon Engineering provides licensed structural and multidisciplinary engineering for design-build firms at production scale: governed detail libraries, calculation packages by system and element, internal plan review, and permitting support with Professional Engineer sign-off.</p>
+      <div class="hero-actions">
+        <a class="btn" href="mailto:gos@gudecapital.com?subject=Dixon%20Engineering%20%E2%80%94%20Services%20Inquiry">Discuss Your Firm</a>
+        <a class="btn btn-outline" href="#exemplar">See Client Exemplar</a>
+      </div>
+      <blockquote class="hero-quote">
+        <p>Engineering should be systems-based. Engineers do their best work in structured environments, solving permitting and planning challenges with repeatable methods.</p>
+        <cite>Phillip Dixon, P.E.</cite>
+      </blockquote>
+    </div>
+    <div class="hero-mark" aria-hidden="true">
+      <svg viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg" role="img">
+        <title>Dixon Engineering — a Gude company</title>
+        <rect x="30" y="16" width="84" height="84" fill="none" stroke="currentColor" stroke-width="4"/>
+        <rect x="38" y="24" width="68" height="68" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <text x="72" y="45" text-anchor="middle" fill="currentColor"
+              font-family="Arial, Helvetica, sans-serif" font-size="15"
+              font-weight="800" letter-spacing="2">GUDE</text>
+        <rect x="12" y="58" width="78" height="32" fill="var(--bg-band)" stroke="currentColor" stroke-width="5"/>
+        <text x="51" y="80" text-anchor="middle" fill="currentColor"
+              font-family="Arial, Helvetica, sans-serif" font-size="15"
+              font-weight="800" letter-spacing="2">DIXON</text>
+        <text x="132" y="57" fill="currentColor"
+              font-family="'Arial Black', Arial, Helvetica, sans-serif" font-size="30"
+              font-weight="900" textLength="150" lengthAdjust="spacing">DIXON</text>
+        <text x="132" y="79" fill="currentColor"
+              font-family="Arial, Helvetica, sans-serif" font-size="19"
+              font-weight="700" textLength="150" lengthAdjust="spacing">ENGINEERING</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="deliver-title">
+  <div class="wrap">
+    <div class="section-label">
+      <span class="line"></span>
+      <h2 id="deliver-title">Licensed Engineering Deliverables</h2>
+      <span class="line"></span>
+    </div>
+    <p class="intro">Licensed engineering services that build across your project portfolio. Each engagement expands a governed library your team and our Professional Engineers can sign on the next permit cycle.</p>
+    <div class="deliver-grid">
+      <article class="deliver">
+        <h3>Structural Detail Library</h3>
+        <p>A governed set of construction details aligned to how your crews build: connections, members, foundations, and assemblies your designers call by name every permit cycle.</p>
+      </article>
+      <article class="deliver">
+        <h3>Calculation Packages by System and Element</h3>
+        <p>Licensed calculation packages organized by <strong>system</strong> (freestanding pergola, patio cover, retaining wall) and by <strong>element</strong> (post base, beam splice, knee brace). Peer-review-ready outputs prepared for Professional Engineer review and stamp.</p>
+      </article>
+      <article class="deliver">
+        <h3>Internal Plan Review</h3>
+        <p>Licensed internal plan review before jurisdiction submittal: checklist findings, correction lists, and Professional Engineer sign-off criteria on a defined schedule.</p>
+      </article>
+      <article class="deliver">
+        <h3>Permitting Support</h3>
+        <p>Licensed engineering documentation aligned to authority expectations: calculation narratives, marked-up plans, and detail references tied to your permit library.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="exemplar-band" id="exemplar" aria-labelledby="exemplar-title">
+  <div class="wrap">
+    <p class="kicker">Client exemplar</p>
+    <h2 id="exemplar-title">Pacific Outdoor Living</h2>
+    <p class="intro"><a href="https://pacificoutdoorliving.com/" rel="noopener noreferrer">Pacific Outdoor Living</a> is a Los Angeles design-build firm founded in <strong>1999</strong>. They run a full in-house model: site analysis, design, permitting, and construction across pools, hardscape, outdoor kitchens, pergolas, and complete backyard transformations. Dixon Engineering provides licensed engineering for their structural detail library and calculation packages.</p>
+
+    <div class="stat-strip" aria-label="Pacific Outdoor Living public credentials">
+      <div class="stat">
+        <span class="num">1999</span>
+        <span class="lbl">Founded</span>
+        <span class="src">pacificoutdoorliving.com</span>
+      </div>
+      <div class="stat">
+        <span class="num">20,000+</span>
+        <span class="lbl">Projects completed</span>
+        <span class="src">pacificoutdoorliving.com</span>
+      </div>
+      <div class="stat">
+        <span class="num">25+ years</span>
+        <span class="lbl">Design-build experience</span>
+        <span class="src">pacificoutdoorliving.com</span>
+      </div>
+      <div class="stat">
+        <span class="num">LIC 715731</span>
+        <span class="lbl">Licensed &amp; insured, CA</span>
+        <span class="src">pacificoutdoorliving.com</span>
+      </div>
+    </div>
+
+    <div class="manifesto" aria-labelledby="manifesto-title">
+      <h2 id="manifesto-title" class="section-label" style="margin-bottom: 20px; padding-left: 0; border: none;">
+        <span class="line" style="display:none"></span>
+        <span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--logo-tone);">Engineering manifesto (Pacific Outdoor Living)</span>
+      </h2>
+      <p>Pacific has completed <strong>20,000+ projects</strong> on a design-build promise: on budget, one coordinated team from site analysis through construction. Their permitting department, in-house crews, and five-step design process require structural engineering that keeps pace with production.</p>
+      <p>Dixon Engineering established the <strong>Gude Pacific Structural Library</strong>: a detail corpus drawn from Pacific's construction standards and estimating library, converted into governed blocks and paired calculation packages. Details are indexed by <strong>system</strong> (pergola, patio cover, pool-adjacent structure) and by <strong>element</strong> (post base, beam, brace, connection) so designers select the correct assembly from the library on every job.</p>
+      <p>Calculation packages follow the same taxonomy. A freestanding pergola system includes member-level checks, connection supplements, and paired construction details. A patio cover follows the same internal review path before authority submittal. Each project starts from a defined engineering baseline.</p>
+      <p>That is the licensed engineering model Dixon delivers: <strong>systems-based structural engineering</strong> for high-volume design-build firms.</p>
+    </div>
+
+    <p class="intro" style="margin-top: 8px;">Systems in active library development include:</p>
+    <div class="system-list" aria-label="Structural systems">
+      <span>Freestanding pergola (P-2)</span>
+      <span>Patio cover</span>
+      <span>Pool &amp; spa structures</span>
+      <span>Retaining &amp; hardscape</span>
+      <span>Outdoor kitchen support</span>
+      <span>Post bases &amp; connections</span>
+      <span>Beam splices</span>
+      <span>Knee brace assemblies</span>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="flow-title">
+  <div class="wrap">
+    <div class="section-label">
+      <span class="line"></span>
+      <h2 id="flow-title">Licensed Engineering Process</h2>
+      <span class="line"></span>
+    </div>
+    <p class="intro">Pacific's design-build path runs Site Analysis through Construction. Dixon Engineering runs a parallel licensed structural path with Professional Engineer oversight at each stage.</p>
+    <div class="flow">
+      <div class="flow-step">
+        <div class="step-num">01</div>
+        <h3>Capture</h3>
+        <p>Document details and calculation precedents from live projects and construction standards. Index by system and element.</p>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">02</div>
+        <h3>Package</h3>
+        <p>Publish calculation packages with paired details. Each system follows a defined checklist and Professional Engineer review path.</p>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">03</div>
+        <h3>Review</h3>
+        <p>Licensed internal plan review against library criteria before external submittal. Professional Engineer findings stay in the taxonomy.</p>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">04</div>
+        <h3>Permit</h3>
+        <p>Deliver authority-ready licensed documentation citing the same details and calculations your design team used.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" aria-labelledby="cta-title">
+  <div class="wrap">
+    <h2 id="cta-title">Licensed Engineering for Production Firms</h2>
+    <p>Contact Dixon Engineering about licensed multidisciplinary services for your detail library, calculation packages, and permitting workflow.</p>
+    <a class="btn" href="mailto:gos@gudecapital.com?subject=Dixon%20Engineering%20%E2%80%94%20Services%20Inquiry">Contact Dixon Engineering</a>
+    <div class="contact-block">
+      <strong>Dixon Engineering — Licensed Professional Engineering, a Gude company</strong><br>
+      Phillip Dixon, P.E.<br>
+      Email: <a href="mailto:gos@gudecapital.com">gos@gudecapital.com</a><br>
+      Parent: <a href="https://gude.co">gude.co</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <nav class="footer-links" aria-label="Legal">
+    <a href="https://gude.co/privacy">Privacy Policy</a><span class="sep">|</span>
+    <a href="https://gude.co/terms">Terms of Use</a><span class="sep">|</span>
+    <a href="https://gude.co/contact">Contact Us</a><span class="sep">|</span>
+    <a href="https://gude.co/accessibility">Accessibility Policy</a>
+  </nav>
+  <p class="legal">&copy; 2016 Gude. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
