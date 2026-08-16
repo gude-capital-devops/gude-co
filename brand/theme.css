@@ -109,16 +109,15 @@ body.lane .footer-links a { color: rgba(255, 255, 255, 0.55); }
 body.lane .footer-links a:hover { color: var(--white); }
 body.lane .legal { color: rgba(255, 255, 255, 0.4); }
 
-/* White breaks */
-body.lane .band-light,
-body.lane main {
+body.lane .exemplar-band { border: none; }
+
+/* White breaks — legal pages wrap the document in band-light too */
+body.lane .band-light {
   background: var(--white);
   color: var(--garnet-black);
 }
-body.lane .band-light a,
-body.lane main a { color: var(--port-red); }
-body.lane .band-light a:hover,
-body.lane main a:hover { color: var(--signal-red); }
+body.lane .band-light a { color: var(--port-red); }
+body.lane .band-light a:hover { color: var(--signal-red); }
 
 body.lane .band-light .section-label h2 { color: var(--port-red); }
 body.lane .band-light .intro,
