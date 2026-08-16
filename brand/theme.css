@@ -47,15 +47,13 @@
   display: none;
 }
 
-/* Lane pages (plans, dixon, evaluation, legal): white content, red chrome.
-   Hub (gude.co) stays Crimson Field. Signal Red is for CTAs on white only. */
+/* Lane pages: Crimson Field by default. Add class="band-light" on a
+   section to break up red-on-red. Hub stays all Crimson Field.
+   Signal Red is for CTAs on white only. */
 body.lane {
-  background: var(--white);
-  color: var(--garnet-black);
+  background: var(--crimson-field);
+  color: var(--white);
 }
-
-body.lane a { color: var(--port-red); }
-body.lane a:hover { color: var(--signal-red); }
 
 body.lane .site-header {
   background: var(--crimson-field);
@@ -95,65 +93,6 @@ body.lane .cta-band .btn-outline {
   border-color: rgba(255, 255, 255, 0.4);
 }
 
-body.lane > section:not(.hero):not(.cta-band):not(.cta-inline) {
-  background: var(--white);
-  color: var(--garnet-black);
-}
-body.lane .section-label h2 { color: var(--port-red); }
-body.lane .intro,
-body.lane .benefit p,
-body.lane .deliver p,
-body.lane .discipline,
-body.lane .tier p,
-body.lane .tier ul {
-  color: var(--iron-ash);
-}
-body.lane .benefit h3,
-body.lane .deliver h3,
-body.lane .tier h3,
-body.lane > section:not(.hero):not(.cta-band) h2,
-body.lane > section:not(.hero):not(.cta-band) h3 {
-  color: var(--garnet-black);
-}
-
-body.lane .benefit,
-body.lane .deliver,
-body.lane .tier,
-body.lane .intake-rows {
-  background: var(--white);
-  border: 1px solid #E4DCDC;
-}
-body.lane .tier { background: var(--white); }
-body.lane .tier-num { color: var(--port-red); }
-
-body.lane .intake-row {
-  border-bottom: 1px solid #E4DCDC;
-}
-body.lane .intake-row:hover { background: #FAF7F7; }
-body.lane .intake-doc .label { color: var(--garnet-black); }
-body.lane .intake-doc .pdf-dl { color: var(--port-red); }
-body.lane .intake-doc .pdf-dl:hover { color: var(--signal-red); }
-body.lane .intake-meta input {
-  background: var(--white);
-  color: var(--garnet-black);
-  border: 1px solid #D0C8C8;
-}
-body.lane .intake-meta input:focus {
-  border-color: var(--port-red);
-  box-shadow: 0 0 0 3px rgba(140, 34, 38, 0.12);
-}
-body.lane .intake-confirm {
-  border-color: #E4DCDC;
-  background: #FAF7F7;
-  color: var(--iron-ash);
-}
-
-body.lane .staff-note {
-  border-left-color: var(--port-red);
-  background: #FAF7F7;
-  color: var(--iron-ash);
-}
-
 body.lane .cta-band,
 body.lane .cta-inline,
 body.lane .site-footer {
@@ -170,54 +109,93 @@ body.lane .footer-links a { color: rgba(255, 255, 255, 0.55); }
 body.lane .footer-links a:hover { color: var(--white); }
 body.lane .legal { color: rgba(255, 255, 255, 0.4); }
 
-body.lane .exemplar-band {
+/* White breaks */
+body.lane .band-light,
+body.lane main {
   background: var(--white);
-  border: none;
   color: var(--garnet-black);
 }
-body.lane .exemplar-band .kicker { color: var(--port-red); }
-body.lane .exemplar-band h2 { color: var(--garnet-black); }
-body.lane .manifesto { border-left-color: var(--port-red); }
-body.lane .manifesto p { color: var(--iron-ash); }
-body.lane .manifesto strong { color: var(--garnet-black); }
-body.lane .system-list span {
-  color: var(--port-red);
-  border-color: #E4DCDC;
-  background: var(--white);
+body.lane .band-light a,
+body.lane main a { color: var(--port-red); }
+body.lane .band-light a:hover,
+body.lane main a:hover { color: var(--signal-red); }
+
+body.lane .band-light .section-label h2 { color: var(--port-red); }
+body.lane .band-light .intro,
+body.lane .band-light .benefit p,
+body.lane .band-light .deliver p,
+body.lane .band-light .discipline,
+body.lane .band-light .tier p,
+body.lane .band-light .tier ul {
+  color: var(--iron-ash);
+}
+body.lane .band-light h2,
+body.lane .band-light h3,
+body.lane .band-light .benefit h3,
+body.lane .band-light .deliver h3,
+body.lane .band-light .tier h3 {
+  color: var(--garnet-black);
 }
 
-body.lane .stat-strip,
-body.lane .flow {
+body.lane .band-light .benefit,
+body.lane .band-light .deliver,
+body.lane .band-light .tier,
+body.lane .band-light .intake-rows {
+  background: var(--white);
+  border: 1px solid #E4DCDC;
+}
+body.lane .band-light .tier-num { color: var(--port-red); }
+body.lane .band-light .intake-row { border-bottom: 1px solid #E4DCDC; }
+body.lane .band-light .intake-row:hover { background: #FAF7F7; }
+body.lane .band-light .intake-doc .label { color: var(--garnet-black); }
+body.lane .band-light .intake-doc .pdf-dl { color: var(--port-red); }
+body.lane .band-light .intake-doc .pdf-dl:hover { color: var(--signal-red); }
+body.lane .band-light .intake-meta input {
+  background: var(--white);
+  color: var(--garnet-black);
+  border: 1px solid #D0C8C8;
+}
+body.lane .band-light .intake-meta input:focus {
+  border-color: var(--port-red);
+  box-shadow: 0 0 0 3px rgba(140, 34, 38, 0.12);
+}
+body.lane .band-light .intake-confirm {
+  border-color: #E4DCDC;
+  background: #FAF7F7;
+  color: var(--iron-ash);
+}
+body.lane .band-light .staff-note {
+  border-left-color: var(--port-red);
+  background: #FAF7F7;
+  color: var(--iron-ash);
+}
+
+body.lane .band-light .stat-strip,
+body.lane .band-light .flow {
   gap: 16px;
   background: transparent;
   border: none;
 }
-body.lane .stat,
-body.lane .flow-step {
+body.lane .band-light .stat,
+body.lane .band-light .flow-step {
   background: var(--crimson-field);
   color: var(--white);
   border-radius: 8px;
 }
-body.lane .stat .num,
-body.lane .flow-step h3 { color: var(--white); }
-body.lane .stat .lbl,
-body.lane .stat .src,
-body.lane .flow-step p,
-body.lane .flow-step .step-num { color: var(--field-muted); }
+body.lane .band-light .stat .num,
+body.lane .band-light .flow-step h3 { color: var(--white); }
+body.lane .band-light .stat .lbl,
+body.lane .band-light .stat .src,
+body.lane .band-light .flow-step p,
+body.lane .band-light .flow-step .step-num { color: var(--field-muted); }
 
-body.lane section .btn:not(.btn-outline) {
+body.lane .band-light .btn:not(.btn-outline) {
   background: var(--signal-red);
   color: var(--white);
 }
-body.lane section .btn:not(.btn-outline):hover {
+body.lane .band-light .btn:not(.btn-outline):hover {
   background: var(--port-red);
   color: var(--white);
-}
-body.lane .hero .btn:not(.btn-outline),
-body.lane .cta-band .btn:not(.btn-outline),
-body.lane .cta-inline .btn:not(.btn-outline) {
-  background: var(--white);
-  color: var(--crimson-field);
 }
 
 body.lane .legal-doc {

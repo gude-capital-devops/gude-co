@@ -10,7 +10,7 @@ This folder is the color source of truth. Recolor the live site here. Do not hun
 
 ## Active palette: Red Field
 
-Live pages: the hub is a Crimson Field layout (dark red ground, white type). Lane pages (`body.lane`) use white content sections with Crimson Field header, hero, and footer. Signal Red is the CTA on white only.
+Live pages: the hub is all Crimson Field. Lane pages (`body.lane`) stay red by default. Put `class="band-light"` on selected sections to break up red-on-red. Signal Red is the CTA on white only.
 
 Named swatches in `theme.css`:
 
@@ -19,8 +19,8 @@ Named swatches in `theme.css`:
 | Garnet Black | `#1C0D0F` | `--bg-deep` (header) |
 | Crimson Field | `#5A171B` | `--bg` (page) |
 | Port Red | `#8C2226` | `--bg-band` (hero) |
-| Signal Red | `#C23034` | **Not used on these pages.** Mark/CTA on white only. |
-| White | `#FFFFFF` | Type and buttons on red; page ground on lane pages |
+| Signal Red | `#C23034` | CTA on white (`band-light`) only |
+| White | `#FFFFFF` | Type/buttons on red; ground on `band-light` sections |
 | Iron Ash | `#4A4546` | Body copy on white |
 | Field muted | `#D0C8C8` | `--muted`, button hover on red |
 
@@ -39,3 +39,5 @@ Do not put Signal Red on Crimson Field — contrast collapses.
 - `/index.html` — hub
 - `/plans/index.html` — plan review
 - `/dixon/index.html` — engineering
+- `/evaluation/index.html` — Product READY
+- `/privacy/` `/terms/` `/contact/` `/accessibility/` — legal
