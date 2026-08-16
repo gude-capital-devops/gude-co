@@ -10,7 +10,7 @@ This folder is the color source of truth. Recolor the live site here. Do not hun
 
 ## Active palette: Red Field
 
-Live pages are a Crimson Field layout: dark red ground, white type, white buttons.
+Live pages: the hub is a Crimson Field layout (dark red ground, white type). Lane pages (`body.lane`) use white content sections with Crimson Field header, hero, and footer. Signal Red is the CTA on white only.
 
 Named swatches in `theme.css`:
 
@@ -20,9 +20,9 @@ Named swatches in `theme.css`:
 | Crimson Field | `#5A171B` | `--bg` (page) |
 | Port Red | `#8C2226` | `--bg-band` (hero) |
 | Signal Red | `#C23034` | **Not used on these pages.** Mark/CTA on white only. |
-| White | `#FFFFFF` | Type and buttons (`--ink`, `--accent`) |
-| Iron Ash | `#4A4546` | Reserved for body copy on white |
-| Field muted | `#D0C8C8` | `--muted`, button hover |
+| White | `#FFFFFF` | Type and buttons on red; page ground on lane pages |
+| Iron Ash | `#4A4546` | Body copy on white |
+| Field muted | `#D0C8C8` | `--muted`, button hover on red |
 
 Do not put Signal Red on Crimson Field — contrast collapses.
 

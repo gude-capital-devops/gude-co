@@ -40,3 +40,211 @@
 .hero-mark svg {
   color: var(--logo-tone);
 }
+
+/* Faint section dividers — off everywhere */
+.section-label .line,
+.lanes .label-row .line {
+  display: none;
+}
+
+/* Lane pages (plans, dixon, evaluation, legal): white content, red chrome.
+   Hub (gude.co) stays Crimson Field. Signal Red is for CTAs on white only. */
+body.lane {
+  background: var(--white);
+  color: var(--garnet-black);
+}
+
+body.lane a { color: var(--port-red); }
+body.lane a:hover { color: var(--signal-red); }
+
+body.lane .site-header {
+  background: var(--crimson-field);
+  color: var(--white);
+  border-bottom: none;
+}
+body.lane .wordmark,
+body.lane .nav-lanes,
+body.lane .nav-lanes a { color: var(--white); }
+body.lane .nav-lanes .here,
+body.lane .nav-lanes a:hover { color: var(--field-muted); }
+body.lane .nav-lanes .sep { color: rgba(255, 255, 255, 0.35); }
+
+body.lane .hero {
+  background: var(--port-red);
+  color: var(--white);
+  border: none;
+}
+body.lane .hero h1 { color: var(--white); }
+body.lane .hero .lede { color: var(--field-muted); }
+body.lane .hero .btn,
+body.lane .cta-band .btn,
+body.lane .cta-inline .btn {
+  background: var(--white);
+  color: var(--crimson-field);
+}
+body.lane .hero .btn:hover,
+body.lane .cta-band .btn:hover,
+body.lane .cta-inline .btn:hover {
+  background: var(--field-muted);
+  color: var(--crimson-field);
+}
+body.lane .hero .btn-outline,
+body.lane .cta-band .btn-outline {
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+body.lane > section:not(.hero):not(.cta-band):not(.cta-inline) {
+  background: var(--white);
+  color: var(--garnet-black);
+}
+body.lane .section-label h2 { color: var(--port-red); }
+body.lane .intro,
+body.lane .benefit p,
+body.lane .deliver p,
+body.lane .discipline,
+body.lane .tier p,
+body.lane .tier ul {
+  color: var(--iron-ash);
+}
+body.lane .benefit h3,
+body.lane .deliver h3,
+body.lane .tier h3,
+body.lane > section:not(.hero):not(.cta-band) h2,
+body.lane > section:not(.hero):not(.cta-band) h3 {
+  color: var(--garnet-black);
+}
+
+body.lane .benefit,
+body.lane .deliver,
+body.lane .tier,
+body.lane .intake-rows {
+  background: var(--white);
+  border: 1px solid #E4DCDC;
+}
+body.lane .tier { background: var(--white); }
+body.lane .tier-num { color: var(--port-red); }
+
+body.lane .intake-row {
+  border-bottom: 1px solid #E4DCDC;
+}
+body.lane .intake-row:hover { background: #FAF7F7; }
+body.lane .intake-doc .label { color: var(--garnet-black); }
+body.lane .intake-doc .pdf-dl { color: var(--port-red); }
+body.lane .intake-doc .pdf-dl:hover { color: var(--signal-red); }
+body.lane .intake-meta input {
+  background: var(--white);
+  color: var(--garnet-black);
+  border: 1px solid #D0C8C8;
+}
+body.lane .intake-meta input:focus {
+  border-color: var(--port-red);
+  box-shadow: 0 0 0 3px rgba(140, 34, 38, 0.12);
+}
+body.lane .intake-confirm {
+  border-color: #E4DCDC;
+  background: #FAF7F7;
+  color: var(--iron-ash);
+}
+
+body.lane .staff-note {
+  border-left-color: var(--port-red);
+  background: #FAF7F7;
+  color: var(--iron-ash);
+}
+
+body.lane .cta-band,
+body.lane .cta-inline,
+body.lane .site-footer {
+  background: var(--crimson-field);
+  color: var(--white);
+  border: none;
+}
+body.lane .cta-band h2 { color: var(--white); }
+body.lane .cta-band p,
+body.lane .cta-inline p,
+body.lane .contact-block { color: var(--field-muted); }
+body.lane .contact-block strong { color: var(--white); }
+body.lane .footer-links a { color: rgba(255, 255, 255, 0.55); }
+body.lane .footer-links a:hover { color: var(--white); }
+body.lane .legal { color: rgba(255, 255, 255, 0.4); }
+
+body.lane .exemplar-band {
+  background: var(--white);
+  border: none;
+  color: var(--garnet-black);
+}
+body.lane .exemplar-band .kicker { color: var(--port-red); }
+body.lane .exemplar-band h2 { color: var(--garnet-black); }
+body.lane .manifesto { border-left-color: var(--port-red); }
+body.lane .manifesto p { color: var(--iron-ash); }
+body.lane .manifesto strong { color: var(--garnet-black); }
+body.lane .system-list span {
+  color: var(--port-red);
+  border-color: #E4DCDC;
+  background: var(--white);
+}
+
+body.lane .stat-strip,
+body.lane .flow {
+  gap: 16px;
+  background: transparent;
+  border: none;
+}
+body.lane .stat,
+body.lane .flow-step {
+  background: var(--crimson-field);
+  color: var(--white);
+  border-radius: 8px;
+}
+body.lane .stat .num,
+body.lane .flow-step h3 { color: var(--white); }
+body.lane .stat .lbl,
+body.lane .stat .src,
+body.lane .flow-step p,
+body.lane .flow-step .step-num { color: var(--field-muted); }
+
+body.lane section .btn:not(.btn-outline) {
+  background: var(--signal-red);
+  color: var(--white);
+}
+body.lane section .btn:not(.btn-outline):hover {
+  background: var(--port-red);
+  color: var(--white);
+}
+body.lane .hero .btn:not(.btn-outline),
+body.lane .cta-band .btn:not(.btn-outline),
+body.lane .cta-inline .btn:not(.btn-outline) {
+  background: var(--white);
+  color: var(--crimson-field);
+}
+
+body.lane .legal-doc {
+  max-width: 720px;
+  padding: 56px 0 72px;
+}
+body.lane .legal-doc h1 {
+  font-size: 28px;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+  color: var(--garnet-black);
+}
+body.lane .legal-doc .updated {
+  font-size: 13px;
+  color: var(--iron-ash);
+  margin-bottom: 28px;
+}
+body.lane .legal-doc h2 {
+  font-size: 16px;
+  margin: 28px 0 10px;
+  color: var(--garnet-black);
+}
+body.lane .legal-doc p,
+body.lane .legal-doc li {
+  font-size: 15px;
+  color: var(--iron-ash);
+  line-height: 1.65;
+  margin-bottom: 12px;
+}
+body.lane .legal-doc ul { padding-left: 20px; }
