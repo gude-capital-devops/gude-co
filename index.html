@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gude</title>
+<meta name="description" content="Gude — engineering, plan review, and product evaluation. One brand, three lanes.">
+<style>
+  :root {
+    --bg: #2b2b2b;
+    --bg-deep: #242424;
+    --ink: #ffffff;
+    --muted: #d9d9d9;
+    --logo-tone: #cfc6c8;
+    --accent: #e8a0a8;
+    --hairline: rgba(232, 160, 168, 0.28);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body { height: 100%; }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .band {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 1180px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 56px 40px 32px;
+  }
+
+  /* ── Top row: wordmark ───────────────────────────────────── */
+  .top {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .wordmark { text-decoration: none; color: var(--ink); }
+
+  .wordmark .gude {
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    line-height: 1;
+    display: block;
+  }
+
+  .wordmark .rule {
+    display: block;
+    width: 64px;
+    height: 3px;
+    background: var(--accent);
+    margin-top: 12px;
+  }
+
+  /* ── Contact widget ──────────────────────────────────────── */
+  .contact {
+    text-align: center;
+    max-width: 460px;
+    margin: 56px auto 0;
+  }
+
+  .contact p {
+    font-size: 15px;
+    color: var(--ink);
+    margin-bottom: 16px;
+    letter-spacing: 0.02em;
+  }
+
+  .contact form {
+    display: flex;
+    gap: 0;
+    justify-content: center;
+  }
+
+  .contact input[type="email"] {
+    flex: 1;
+    min-width: 0;
+    padding: 13px 16px;
+    font-size: 14px;
+    font-family: inherit;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-right: none;
+    background: var(--bg-deep);
+    color: var(--ink);
+    outline: none;
+  }
+
+  .contact input[type="email"]::placeholder { color: #8f8f8f; }
+
+  .contact input[type="email"]:focus { border-color: var(--accent); }
+
+  .contact button {
+    padding: 13px 30px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: inherit;
+    letter-spacing: 0.04em;
+    border: none;
+    background: var(--accent);
+    color: #2b2b2b;
+    cursor: pointer;
+  }
+
+  .contact button:hover { background: #f0b3ba; }
+
+  .contact .confirm {
+    display: none;
+    font-size: 14px;
+    color: var(--accent);
+    padding: 13px 0;
+  }
+
+  /* ── Lane strip ────────────────────────────────────────────── */
+  .lanes { margin: 72px 0 0; }
+
+  .lanes .label-row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 44px;
+  }
+
+  .lanes .label-row .line {
+    flex: 1;
+    height: 1px;
+    background: var(--hairline);
+  }
+
+  .lanes .label-row .label {
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .lanes .label-row .label a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .lanes .label-row .label a:hover { color: var(--accent); }
+
+  .lanes .label-row .label .sep {
+    color: var(--muted);
+    padding: 0 10px;
+  }
+
+  .brands {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .brands a {
+    display: block;
+    opacity: 0.88;
+    transition: opacity 0.15s ease;
+  }
+
+  .brands a:hover { opacity: 1; }
+
+  .brands svg { display: block; height: 88px; width: auto; }
+
+  /* ── Footer links ──────────────────────────────────────────── */
+  .footer-links {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 0;
+    font-size: 13px;
+  }
+
+  .footer-links a {
+    color: var(--muted);
+    text-decoration: none;
+    padding: 0 18px;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  .footer-links .sep { color: rgba(255, 255, 255, 0.25); }
+
+  .legal {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 11px;
+    color: #8f8f8f;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 720px) {
+    .band { padding: 40px 24px 24px; }
+    .top { align-items: center; }
+    .contact { margin-top: 48px; }
+    .lanes { margin-top: 56px; }
+    .lanes .label-row .label { white-space: normal; line-height: 1.8; }
+    .brands { gap: 36px; }
+    .brands svg { height: 72px; }
+    .footer-links { margin-top: 56px; }
+  }
+</style>
+</head>
+<body>
+
+<main class="band">
+
+  <!-- Top: wordmark -->
+  <div class="top">
+    <a class="wordmark" href="https://gude.co" aria-label="Gude">
+      <span class="gude">GUDE</span>
+      <span class="rule"></span>
+    </a>
+  </div>
+
+  <!-- Lane strip -->
+  <section class="lanes" aria-label="Gude service lanes">
+    <div class="label-row">
+      <span class="line"></span>
+      <span class="label">
+        <a href="https://plans.gude.co">Plan Review</a><span class="sep">+</span><a href="https://dixon.gude.co">Engineering</a><span class="sep">+</span><a href="https://evaluation.gude.co">Evaluation</a>
+      </span>
+      <span class="line"></span>
+    </div>
+
+    <div class="brands">
+
+      <!-- Product READY — evaluation & future certification -->
+      <a href="https://evaluation.gude.co" aria-label="Product READY — evaluation and certification">
+        <svg viewBox="0 0 240 120" xmlns="http://www.w3.org/2000/svg" role="img">
+          <title>Product READY</title>
+          <g fill="#cfc6c8">
+            <text x="120" y="38" text-anchor="middle"
+                  font-family="Arial, Helvetica, sans-serif" font-size="30"
+                  font-weight="400" letter-spacing="6">PRODUCT</text>
+            <rect x="30" y="52" width="180" height="52" fill="none" stroke="#cfc6c8" stroke-width="4"/>
+            <text x="120" y="90" text-anchor="middle"
+                  font-family="Arial, Helvetica, sans-serif" font-size="34"
+                  font-weight="800" letter-spacing="8">READY</text>
+          </g>
+        </svg>
+      </a>
+
+      <!-- GUDE / DIXON — engineering (sign lockup) -->
+      <a href="https://dixon.gude.co" aria-label="Dixon Engineering — a Gude company">
+        <svg viewBox="0 0 430 120" xmlns="http://www.w3.org/2000/svg" role="img">
+          <title>Dixon Engineering — a Gude company</title>
+          <g fill="#cfc6c8" stroke="#cfc6c8">
+            <!-- arc canopy with GUDE -->
+            <path d="M 20 46 A 52 40 0 0 1 124 46" fill="none" stroke-width="4"/>
+            <text x="72" y="40" text-anchor="middle" stroke="none"
+                  font-family="Arial, Helvetica, sans-serif" font-size="19"
+                  font-weight="700" letter-spacing="3">GUDE</text>
+            <!-- sign panel with DIXON -->
+            <rect x="26" y="50" width="92" height="34" fill="none" stroke-width="4"/>
+            <text x="72" y="74" text-anchor="middle" stroke="none"
+                  font-family="Arial, Helvetica, sans-serif" font-size="17"
+                  font-weight="800" letter-spacing="2">DIXON</text>
+            <!-- posts -->
+            <line x1="44" y1="84" x2="44" y2="106" stroke-width="4"/>
+            <line x1="100" y1="84" x2="100" y2="106" stroke-width="4"/>
+          </g>
+          <text x="140" y="72" fill="#cfc6c8" stroke="none"
+                font-family="Arial, Helvetica, sans-serif" font-size="21"
+                font-weight="600" letter-spacing="1.5">DIXON ENGINEERING</text>
+        </svg>
+      </a>
+
+      <!-- CMDAA — house monogram -->
+      <a href="https://plans.gude.co" aria-label="CMDAA — plan review and approval">
+        <svg viewBox="0 0 240 120" xmlns="http://www.w3.org/2000/svg" role="img">
+          <title>CMDAA</title>
+          <g stroke="#cfc6c8" fill="none" stroke-width="5" stroke-linecap="square">
+            <!-- roofline -->
+            <polyline points="34,58 120,18 206,58"/>
+            <!-- eave returns -->
+            <line x1="34" y1="58" x2="34" y2="70"/>
+            <line x1="206" y1="58" x2="206" y2="70"/>
+          </g>
+          <text x="120" y="98" text-anchor="middle" fill="#cfc6c8"
+                font-family="Arial, Helvetica, sans-serif" font-size="40"
+                font-weight="800" letter-spacing="6">CMDAA</text>
+        </svg>
+      </a>
+
+    </div>
+
+    <div class="contact">
+      <p>Get in touch with us</p>
+      <form id="contact-form" action="#" method="post" novalidate>
+        <input type="email" name="email" id="email" placeholder="Email address" required aria-label="Email address">
+        <button type="submit">Contact us</button>
+      </form>
+      <div class="confirm" id="confirm">Thank you. We'll be in touch.</div>
+    </div>
+  </section>
+
+  <!-- Footer links -->
+  <div>
+    <nav class="footer-links" aria-label="Legal">
+      <a href="/privacy">Privacy Policy</a><span class="sep">|</span>
+      <a href="/terms">Terms of Use</a><span class="sep">|</span>
+      <a href="/contact">Contact Us</a><span class="sep">|</span>
+      <a href="/accessibility">Accessibility Policy</a>
+    </nav>
+    <p class="legal">&copy; 2026 Gude. All rights reserved.</p>
+  </div>
+
+</main>
+
+<script>
+  // Placeholder capture until a list provider is wired in (form action="#").
+  document.getElementById('contact-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var email = document.getElementById('email');
+    if (!email.checkValidity()) { email.reportValidity(); return; }
+    this.style.display = 'none';
+    document.getElementById('confirm').style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
