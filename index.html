@@ -67,59 +67,82 @@
   /* ── Contact widget ──────────────────────────────────────── */
   .contact {
     text-align: center;
-    max-width: 460px;
-    margin: 56px auto 0;
-  }
-
-  .contact p {
-    font-size: 15px;
-    color: var(--ink);
-    margin-bottom: 16px;
-    letter-spacing: 0.02em;
+    max-width: 480px;
+    margin: 0 auto;
   }
 
   .contact form {
     display: flex;
-    gap: 0;
+    gap: 10px;
     justify-content: center;
   }
 
   .contact input[type="email"] {
     flex: 1;
     min-width: 0;
-    padding: 13px 16px;
+    padding: 14px 18px;
     font-size: 14px;
     font-family: inherit;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-right: none;
-    background: var(--bg-deep);
+    letter-spacing: 0.01em;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.03);
     color: var(--ink);
     outline: none;
+    transition: border-color 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
   }
 
-  .contact input[type="email"]::placeholder { color: #8f8f8f; }
+  .contact input[type="email"]::placeholder {
+    color: rgba(255, 255, 255, 0.42);
+  }
 
-  .contact input[type="email"]:focus { border-color: var(--accent); }
+  .contact input[type="email"]:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .contact input[type="email"]:focus {
+    border-color: rgba(232, 160, 168, 0.55);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 0 3px rgba(232, 160, 168, 0.14);
+  }
 
   .contact button {
-    padding: 13px 30px;
-    font-size: 14px;
-    font-weight: 700;
+    padding: 14px 28px;
+    font-size: 13px;
+    font-weight: 600;
     font-family: inherit;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.07em;
+    white-space: nowrap;
     border: none;
+    border-radius: 6px;
     background: var(--accent);
-    color: #2b2b2b;
+    color: var(--bg);
     cursor: pointer;
+    transition: background 0.22s ease, box-shadow 0.22s ease, transform 0.16s ease;
   }
 
-  .contact button:hover { background: #f0b3ba; }
+  .contact button:hover {
+    background: #f0b3ba;
+    box-shadow: 0 6px 18px rgba(232, 160, 168, 0.18);
+    transform: translateY(-1px);
+  }
+
+  .contact button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(232, 160, 168, 0.14);
+  }
+
+  .contact button:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(232, 160, 168, 0.28);
+  }
 
   .contact .confirm {
     display: none;
     font-size: 14px;
+    letter-spacing: 0.02em;
     color: var(--accent);
-    padding: 13px 0;
+    padding: 15px 0;
   }
 
   /* ── Lane strip ────────────────────────────────────────────── */
@@ -176,6 +199,9 @@
 
   .brands svg { display: block; height: 88px; width: auto; }
 
+  /* ── Bottom group: contact + footer links ──────────────────── */
+  .bottom { padding-top: 56px; }
+
   /* ── Footer links ──────────────────────────────────────────── */
   .footer-links {
     margin-top: 56px;
@@ -210,12 +236,15 @@
   @media (max-width: 720px) {
     .band { padding: 40px 24px 24px; }
     .top { align-items: center; }
-    .contact { margin-top: 48px; }
     .lanes { margin-top: 56px; }
     .lanes .label-row .label { white-space: normal; line-height: 1.8; }
     .brands { gap: 36px; }
     .brands svg { height: 72px; }
-    .footer-links { margin-top: 56px; }
+    .bottom { padding-top: 44px; }
+    .contact form { flex-wrap: wrap; }
+    .contact input[type="email"] { flex: 1 1 180px; }
+    .contact button { flex: 1 1 auto; padding: 14px 22px; }
+    .footer-links { margin-top: 44px; }
   }
 </style>
 </head>
@@ -302,19 +331,18 @@
       </a>
 
     </div>
+  </section>
 
+  <!-- Bottom: contact widget above the footer links -->
+  <div class="bottom">
     <div class="contact">
-      <p>Get in touch with us</p>
       <form id="contact-form" action="#" method="post" novalidate>
         <input type="email" name="email" id="email" placeholder="Email address" required aria-label="Email address">
         <button type="submit">Contact us</button>
       </form>
       <div class="confirm" id="confirm">Thank you. We'll be in touch.</div>
     </div>
-  </section>
 
-  <!-- Footer links -->
-  <div>
     <nav class="footer-links" aria-label="Legal">
       <a href="/privacy">Privacy Policy</a><span class="sep">|</span>
       <a href="/terms">Terms of Use</a><span class="sep">|</span>
