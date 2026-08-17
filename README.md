@@ -16,7 +16,7 @@ GitHub Pages allows one custom domain per repo, so each subdomain is a sibling p
 | `plans/` | `plans.gude.co` | `gude-plans` |
 | `dixon/` | `dixon.gude.co` | `gude-dixon` |
 | `evaluation/` | `evaluation.gude.co` | `gude-evaluation` |
-| `privacy/` `terms/` `contact/` `accessibility/` | `gude.co/privacy` (etc.) | `gude-co` |
+| `privacy/` `terms/` `contact/` | `gude.co/privacy` (etc.) | `gude-co` |
 | `brand/` | (copied into each Pages repo) | see `brand/README.md` |
 
 Republish subdomains: `scripts/publish-subdomains.ps1`

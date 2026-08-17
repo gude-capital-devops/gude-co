@@ -47,4 +47,4 @@ Do not put Signal Red on Crimson Field — contrast collapses.
 - `/plans/index.html` — plan review
 - `/dixon/index.html` — engineering
 - `/evaluation/index.html` — Product READY
-- `/privacy/` `/terms/` `/contact/` `/accessibility/` — legal
+- `/privacy/` `/terms/` `/contact/` — legal

@@ -214,7 +214,12 @@ body.lane .legal-doc .updated {
 }
 body.lane .legal-doc h2 {
   font-size: 16px;
-  margin: 28px 0 10px;
+  margin: 32px 0 10px;
+  color: var(--garnet-black);
+}
+body.lane .legal-doc h3 {
+  font-size: 14px;
+  margin: 20px 0 8px;
   color: var(--garnet-black);
 }
 body.lane .legal-doc p,
@@ -224,4 +229,6 @@ body.lane .legal-doc li {
   line-height: 1.65;
   margin-bottom: 12px;
 }
-body.lane .legal-doc ul { padding-left: 20px; }
+body.lane .legal-doc ul,
+body.lane .legal-doc ol { padding-left: 22px; margin-bottom: 12px; }
+body.lane .legal-doc li { margin-bottom: 8px; }
