@@ -382,35 +382,6 @@
 
   .contact-block strong { color: var(--logo-tone); font-weight: 600; }
 
-  .site-footer {
-    padding: 44px 40px 32px;
-    text-align: center;
-  }
-
-  .footer-links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 4px 0;
-    font-size: 11px;
-    letter-spacing: 0.02em;
-  }
-
-  .footer-links a {
-    color: rgba(255, 255, 255, 0.42);
-    text-decoration: none;
-    padding: 0 12px;
-  }
-
-  .footer-links a:hover { color: rgba(255, 255, 255, 0.65); }
-  .footer-links .sep { color: rgba(255, 255, 255, 0.22); }
-
-  .legal {
-    margin-top: 14px;
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0.28);
-  }
-
   @media (max-width: 900px) {
     .hero .wrap { grid-template-columns: 1fr; }
     .hero-mark { order: -1; }
@@ -612,12 +583,20 @@
 </section>
 
 <footer class="site-footer">
-  <nav class="footer-links" aria-label="Legal">
-    <a href="https://gude.co/privacy">Privacy Policy</a><span class="sep">|</span>
-    <a href="https://gude.co/terms">Terms of Use</a><span class="sep">|</span>
-    <a href="https://gude.co/contact">Contact Us</a>
-  </nav>
-  <p class="legal">&copy; 2016 Gude. All rights reserved.</p>
+  <div class="footer-bar">
+    <a class="wordmark footer-mark" href="https://gude.co" aria-label="Gude">
+      <span class="gude">GUDE</span>
+      <span class="rule"></span>
+    </a>
+    <div class="footer-end">
+      <nav class="footer-links" aria-label="Legal">
+        <a href="https://gude.co/privacy">Privacy Policy</a><span class="sep">|</span>
+        <a href="https://gude.co/terms">Terms of Use</a><span class="sep">|</span>
+        <a href="https://gude.co/contact">Contact Us</a>
+      </nav>
+      <p class="legal">&copy; 2016 Gude. All rights reserved.</p>
+    </div>
+  </div>
 </footer>
 
 </body>

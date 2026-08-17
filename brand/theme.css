@@ -105,9 +105,9 @@ body.lane .cta-band p,
 body.lane .cta-inline p,
 body.lane .contact-block { color: var(--field-muted); }
 body.lane .contact-block strong { color: var(--white); }
-body.lane .footer-links a { color: rgba(255, 255, 255, 0.55); }
+body.lane .footer-links a { color: rgba(255, 255, 255, 0.62); }
 body.lane .footer-links a:hover { color: var(--white); }
-body.lane .legal { color: rgba(255, 255, 255, 0.4); }
+body.lane .legal { color: rgba(255, 255, 255, 0.34); }
 
 body.lane .exemplar-band { border: none; }
 
@@ -152,7 +152,14 @@ body.lane .band-light .intake-doc .pdf-dl:hover { color: var(--signal-red); }
 body.lane .band-light .intake-meta input {
   background: var(--white);
   color: var(--garnet-black);
+  caret-color: var(--garnet-black);
   border: 1px solid #D0C8C8;
+  -webkit-text-fill-color: var(--garnet-black);
+}
+body.lane .band-light .intake-meta input::placeholder {
+  color: #8A8484;
+  opacity: 1;
+  -webkit-text-fill-color: #8A8484;
 }
 body.lane .band-light .intake-meta input:focus {
   border-color: var(--port-red);
@@ -232,3 +239,67 @@ body.lane .legal-doc li {
 body.lane .legal-doc ul,
 body.lane .legal-doc ol { padding-left: 22px; margin-bottom: 12px; }
 body.lane .legal-doc li { margin-bottom: 8px; }
+
+/* Shared footer — logo left, legal right. Same on hub, lanes, and policy pages. */
+.site-footer {
+  padding: 32px 0 28px;
+  background: var(--crimson-field);
+  color: var(--white);
+}
+.footer-bar {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px 40px;
+  flex-wrap: wrap;
+}
+.site-footer .footer-mark { text-decoration: none; color: var(--white); }
+.site-footer .footer-mark .gude {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1;
+  display: block;
+}
+.site-footer .footer-mark .rule {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--white);
+  margin-top: 8px;
+}
+.footer-end { text-align: right; margin-left: auto; }
+.footer-links {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+.footer-links a {
+  color: rgba(255, 255, 255, 0.62);
+  text-decoration: none;
+  padding: 0 10px;
+}
+.footer-links a:hover { color: var(--white); }
+.footer-links .sep { color: rgba(255, 255, 255, 0.28); }
+.legal {
+  margin-top: 8px;
+  font-size: 9px;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.34);
+  line-height: 1.5;
+}
+@media (max-width: 520px) {
+  .footer-bar {
+    padding: 0 24px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-end { text-align: left; margin-left: 0; }
+  .footer-links { justify-content: flex-start; }
+}

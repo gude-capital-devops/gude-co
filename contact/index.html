@@ -18,10 +18,27 @@
   .nav-lanes { font-size: 11px; letter-spacing: 0.06em; }
   .nav-lanes a { text-decoration: none; }
   .nav-lanes .sep { padding: 0 8px; }
-  .site-footer { padding: 44px 40px 32px; text-align: center; }
-  .footer-links { font-size: 11px; }
-  .footer-links a { text-decoration: none; padding: 0 12px; }
-  .footer-links .sep { color: rgba(255,255,255,0.22); }
+
+  .inquiry-form input,
+  .inquiry-form textarea {
+    width: 100%;
+    font-family: inherit;
+    font-size: 15px;
+    color: #1C0D0F;
+    caret-color: #1C0D0F;
+    -webkit-text-fill-color: #1C0D0F;
+    background: #FFFFFF;
+    border: 1px solid #D0C8C8;
+    border-radius: 0;
+    padding: 12px 14px;
+  }
+  .inquiry-form textarea { min-height: 148px; resize: vertical; line-height: 1.55; }
+  .inquiry-form input::placeholder,
+  .inquiry-form textarea::placeholder {
+    color: #8A8484;
+    opacity: 1;
+    -webkit-text-fill-color: #8A8484;
+  }
 
   .contact-page { max-width: 680px; padding: 56px 0 80px; }
   .contact-page h1 {
@@ -85,13 +102,21 @@
     width: 100%;
     font-family: inherit;
     font-size: 15px;
-    color: var(--garnet-black);
-    background: var(--white);
+    color: #1C0D0F;
+    caret-color: #1C0D0F;
+    -webkit-text-fill-color: #1C0D0F;
+    background: #FFFFFF;
     border: 1px solid #D0C8C8;
     border-radius: 0;
     padding: 12px 14px;
   }
   .inquiry-form textarea { min-height: 148px; resize: vertical; line-height: 1.55; }
+  .inquiry-form input::placeholder,
+  .inquiry-form textarea::placeholder {
+    color: #8A8484;
+    opacity: 1;
+    -webkit-text-fill-color: #8A8484;
+  }
   .inquiry-form input:focus,
   .inquiry-form textarea:focus {
     outline: none;
@@ -242,12 +267,20 @@
   </div>
 </main>
 <footer class="site-footer">
-  <nav class="footer-links" aria-label="Legal">
-    <a href="https://gude.co/privacy">Privacy Policy</a><span class="sep">|</span>
-    <a href="https://gude.co/terms">Terms of Use</a><span class="sep">|</span>
-    <a href="https://gude.co/contact">Contact Us</a>
-  </nav>
-  <p class="legal">&copy; 2016 Gude. All rights reserved.</p>
+  <div class="footer-bar">
+    <a class="wordmark footer-mark" href="https://gude.co" aria-label="Gude">
+      <span class="gude">GUDE</span>
+      <span class="rule"></span>
+    </a>
+    <div class="footer-end">
+      <nav class="footer-links" aria-label="Legal">
+        <a href="https://gude.co/privacy">Privacy Policy</a><span class="sep">|</span>
+        <a href="https://gude.co/terms">Terms of Use</a><span class="sep">|</span>
+        <a href="https://gude.co/contact">Contact Us</a>
+      </nav>
+      <p class="legal">&copy; 2016 Gude. All rights reserved.</p>
+    </div>
+  </div>
 </footer>
 <script>
   (function () {

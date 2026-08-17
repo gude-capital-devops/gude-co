@@ -138,35 +138,7 @@
   /* ── Bottom group: contact + footer links ──────────────────── */
   .bottom { padding-top: 56px; }
 
-  /* ── Footer links ──────────────────────────────────────────── */
-  .footer-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 4px 0;
-    margin-top: 44px;
-    font-size: 11px;
-    letter-spacing: 0.02em;
-  }
-
-  .footer-links a {
-    color: rgba(255, 255, 255, 0.42);
-    text-decoration: none;
-    padding: 0 12px;
-  }
-
-  .footer-links a:hover { color: rgba(255, 255, 255, 0.65); }
-
-  .footer-links .sep { color: rgba(255, 255, 255, 0.22); }
-
-  .legal {
-    margin-top: 14px;
-    text-align: center;
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0.28);
-    line-height: 1.6;
-  }
+  /* ── Footer links (shared layout is in theme.css) ─────────── */
 
   @media (max-width: 720px) {
     .band { padding: 40px 24px 24px; }
@@ -288,16 +260,26 @@
     <div class="contact">
       <a href="/contact">Contact us</a>
     </div>
-
-    <nav class="footer-links" aria-label="Legal">
-      <a href="/privacy">Privacy Policy</a><span class="sep">|</span>
-      <a href="/terms">Terms of Use</a><span class="sep">|</span>
-      <a href="/contact">Contact Us</a>
-    </nav>
-    <p class="legal">&copy; 2016 Gude. All rights reserved.</p>
   </div>
 
 </main>
+
+<footer class="site-footer">
+  <div class="footer-bar">
+    <a class="wordmark footer-mark" href="https://gude.co" aria-label="Gude">
+      <span class="gude">GUDE</span>
+      <span class="rule"></span>
+    </a>
+    <div class="footer-end">
+      <nav class="footer-links" aria-label="Legal">
+        <a href="/privacy">Privacy Policy</a><span class="sep">|</span>
+        <a href="/terms">Terms of Use</a><span class="sep">|</span>
+        <a href="/contact">Contact Us</a>
+      </nav>
+      <p class="legal">&copy; 2016 Gude. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
