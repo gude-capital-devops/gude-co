@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — Gude</title>
-<meta name="description" content="Contact Gude for evaluation, engineering, or plan review.">
+<meta name="description" content="Contact Gude for evaluation, engineering, or plan review. General inquiries: office@gude.co.">
 <link rel="stylesheet" href="../brand/theme.css">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -22,7 +22,155 @@
   .footer-links { font-size: 11px; }
   .footer-links a { text-decoration: none; padding: 0 12px; }
   .footer-links .sep { color: rgba(255,255,255,0.22); }
-  @media (max-width: 520px) { .wrap { padding: 0 24px; } }
+
+  .contact-page { max-width: 680px; padding: 56px 0 80px; }
+  .contact-page h1 {
+    font-size: 28px;
+    letter-spacing: 0.14em;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--garnet-black);
+  }
+  .kicker {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--port-red);
+    font-weight: 700;
+    margin-bottom: 36px;
+  }
+  .block { margin-bottom: 48px; }
+  .block-label {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--iron-ash);
+    font-weight: 700;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--garnet-black);
+  }
+  .office-mail {
+    display: block;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--garnet-black);
+    text-decoration: none;
+    margin-bottom: 8px;
+  }
+  .office-mail:hover { color: var(--port-red); }
+  .block-note {
+    font-size: 14px;
+    color: var(--iron-ash);
+    max-width: 520px;
+  }
+
+  .inquiry-form {
+    display: grid;
+    gap: 18px;
+  }
+  .inquiry-form label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--garnet-black);
+    margin-bottom: 8px;
+  }
+  .inquiry-form .req { color: var(--port-red); }
+  .inquiry-form input,
+  .inquiry-form textarea {
+    width: 100%;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--garnet-black);
+    background: var(--white);
+    border: 1px solid #D0C8C8;
+    border-radius: 0;
+    padding: 12px 14px;
+  }
+  .inquiry-form textarea { min-height: 148px; resize: vertical; line-height: 1.55; }
+  .inquiry-form input:focus,
+  .inquiry-form textarea:focus {
+    outline: none;
+    border-color: var(--port-red);
+    box-shadow: 0 0 0 3px rgba(140, 34, 38, 0.12);
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .inquiry-form button {
+    justify-self: start;
+    margin-top: 6px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: none;
+    background: var(--signal-red);
+    color: var(--white);
+    padding: 14px 28px;
+    cursor: pointer;
+  }
+  .inquiry-form button:hover { background: var(--port-red); }
+  .form-legal {
+    font-size: 12px;
+    color: var(--iron-ash);
+    margin-top: 4px;
+  }
+  .form-status {
+    display: none;
+    font-size: 14px;
+    color: var(--garnet-black);
+    background: #FAF7F7;
+    border-left: 3px solid var(--port-red);
+    padding: 12px 14px;
+  }
+
+  .people { display: grid; gap: 0; border-top: 1px solid #E4DCDC; }
+  .person {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px 24px;
+    align-items: baseline;
+    padding: 22px 0;
+    border-bottom: 1px solid #E4DCDC;
+  }
+  .person .name {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--garnet-black);
+  }
+  .person .title {
+    grid-column: 1;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--iron-ash);
+  }
+  .person .email {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+    font-size: 14px;
+    color: var(--port-red);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+  .person .email:hover { color: var(--signal-red); }
+
+  @media (max-width: 640px) {
+    .wrap { padding: 0 24px; }
+    .form-row { grid-template-columns: 1fr; }
+    .person { grid-template-columns: 1fr; }
+    .person .email { grid-column: 1; grid-row: auto; }
+  }
 </style>
 </head>
 <body class="lane">
@@ -38,30 +186,59 @@
 </header>
 <main class="band-light">
   <div class="wrap">
-  <article class="legal-doc">
-    <h1>Contact</h1>
-    <p class="updated">Gude — evaluation, engineering, and plan review. An email is an inquiry, not a contract. See our <a href="https://gude.co/terms">Terms of Use</a> and <a href="https://gude.co/privacy">Privacy Policy</a>.</p>
+    <div class="contact-page">
+      <h1>CONTACT</h1>
+      <p class="kicker">Evaluation · Engineering · Plan Review</p>
 
-    <h2>General</h2>
-    <p>Operations: <a href="mailto:gos@gudecapital.com">gos@gudecapital.com</a>. Put the lane in the subject if you know it: Product READY, Dixon Engineering, or plan review / CMDAA.</p>
+      <section class="block" aria-labelledby="inq-label">
+        <h2 id="inq-label" class="block-label">General inquiries</h2>
+        <a class="office-mail" href="mailto:office@gude.co">office@gude.co</a>
+        <p class="block-note">Write the office for new work, referrals, and administrative correspondence. Direct messages to a person listed below are also received.</p>
+      </section>
 
-    <h2>People</h2>
-    <ul>
-      <li>Anthony Gude — <a href="mailto:agude@gude.co">agude@gude.co</a></li>
-      <li>Phillip Dixon — <a href="mailto:phillip@gude.co">phillip@gude.co</a></li>
-      <li>Sierra Flynn — <a href="mailto:sierra@gude.co">sierra@gude.co</a></li>
-    </ul>
-    <p>Lanes: <a href="https://evaluation.gude.co">evaluation.gude.co</a>, <a href="https://dixon.gude.co">dixon.gude.co</a>, <a href="https://plans.gude.co">plans.gude.co</a>. You can also start a plan-review intake on <a href="https://plans.gude.co/#intake-checklist">plans.gude.co</a> (it opens a draft email — attach your PDFs before you send).</p>
+      <section class="block" aria-labelledby="form-label">
+        <h2 id="form-label" class="block-label">Inquiry</h2>
+        <form class="inquiry-form" id="inquiry-form" novalidate>
+          <div>
+            <label for="inq-name">Name <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="inq-name" name="name" autocomplete="name" required>
+          </div>
+          <div class="form-row">
+            <div>
+              <label for="inq-phone">Phone <span class="req" aria-hidden="true">*</span></label>
+              <input type="tel" id="inq-phone" name="phone" autocomplete="tel" required>
+            </div>
+            <div>
+              <label for="inq-email">Email <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="inq-email" name="email" autocomplete="email" required>
+            </div>
+          </div>
+          <div>
+            <label for="inq-details">Additional details</label>
+            <textarea id="inq-details" name="details" rows="6" placeholder="Project or product, jurisdiction, and what you need from Gude."></textarea>
+          </div>
+          <p class="form-legal">An inquiry is not an engagement. See our <a href="https://gude.co/terms">Terms of Use</a> and <a href="https://gude.co/privacy">Privacy Policy</a>.</p>
+          <p class="form-status" id="inq-status" role="status"></p>
+          <button type="submit">Submit inquiry</button>
+        </form>
+      </section>
 
-    <h2>What to include</h2>
-    <ul>
-      <li>Your name and organization</li>
-      <li>Project or product name and location / jurisdiction</li>
-      <li>What you need (evaluation, licensed engineering, or plan review)</li>
-      <li>Relevant files or a short description of where the package stands</li>
-    </ul>
-    <p>We will reply to the address you use. How we handle what you send is in the <a href="https://gude.co/privacy">Privacy Policy</a>.</p>
-  </article>
+      <section class="block" aria-labelledby="people-label">
+        <h2 id="people-label" class="block-label">Principals</h2>
+        <div class="people">
+          <article class="person">
+            <div class="name">Anthony Gude</div>
+            <div class="title">Partner</div>
+            <a class="email" href="mailto:agude@gude.co">agude@gude.co</a>
+          </article>
+          <article class="person">
+            <div class="name">Phillip Dixon, P.E.</div>
+            <div class="title">Principal Engineer</div>
+            <a class="email" href="mailto:phillip@gude.co">phillip@gude.co</a>
+          </article>
+        </div>
+      </section>
+    </div>
   </div>
 </main>
 <footer class="site-footer">
@@ -72,5 +249,33 @@
   </nav>
   <p class="legal">&copy; 2016 Gude. All rights reserved.</p>
 </footer>
+<script>
+  (function () {
+    var form = document.getElementById('inquiry-form');
+    var statusEl = document.getElementById('inq-status');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = document.getElementById('inq-name');
+      var phone = document.getElementById('inq-phone');
+      var email = document.getElementById('inq-email');
+      var details = document.getElementById('inq-details');
+      if (!name.checkValidity() || !phone.checkValidity() || !email.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      var body = [
+        'Name: ' + name.value.trim(),
+        'Phone: ' + phone.value.trim(),
+        'Email: ' + email.value.trim(),
+        '',
+        details.value.trim() || '(No additional details.)'
+      ].join('\n');
+      var subject = encodeURIComponent('Inquiry — ' + name.value.trim());
+      window.location.href = 'mailto:office@gude.co?subject=' + subject + '&body=' + encodeURIComponent(body);
+      statusEl.style.display = 'block';
+      statusEl.textContent = 'Opening your email application addressed to office@gude.co. Send the message to complete the inquiry.';
+    });
+  })();
+</script>
 </body>
 </html>

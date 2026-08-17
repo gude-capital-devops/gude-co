@@ -110,85 +110,29 @@
 
   .brands svg { display: block; height: 88px; width: auto; }
 
-  /* ── Contact widget ──────────────────────────────────────── */
+  /* ── Contact ─────────────────────────────────────────────── */
   .contact {
     text-align: center;
-    max-width: 480px;
-    margin: 0 auto;
   }
 
-  .contact form {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-  }
-
-  .contact input[type="email"] {
-    flex: 1;
-    min-width: 0;
-    padding: 14px 18px;
-    font-size: 14px;
-    font-family: inherit;
-    letter-spacing: 0.01em;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 6px;
-    background: rgba(255, 255, 255, 0.03);
-    color: var(--ink);
-    outline: none;
-    transition: border-color 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
-  }
-
-  .contact input[type="email"]::placeholder {
-    color: rgba(255, 255, 255, 0.42);
-  }
-
-  .contact input[type="email"]:hover {
-    border-color: rgba(255, 255, 255, 0.2);
-  }
-
-  .contact input[type="email"]:focus {
-    border-color: var(--hairline);
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 0 0 3px var(--accent-glow);
-  }
-
-  .contact button {
+  .contact a {
+    display: inline-block;
     padding: 14px 28px;
     font-size: 13px;
     font-weight: 600;
-    font-family: inherit;
     letter-spacing: 0.07em;
-    white-space: nowrap;
-    border: none;
+    text-decoration: none;
     border-radius: 6px;
     background: var(--accent);
     color: var(--bg);
-    cursor: pointer;
     transition: background 0.22s ease, box-shadow 0.22s ease, transform 0.16s ease;
   }
 
-  .contact button:hover {
+  .contact a:hover {
     background: var(--accent-hover);
     box-shadow: 0 6px 18px var(--btn-shadow);
     transform: translateY(-1px);
-  }
-
-  .contact button:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 8px var(--btn-shadow);
-  }
-
-  .contact button:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 3px var(--accent-glow);
-  }
-
-  .contact .confirm {
-    display: none;
-    font-size: 14px;
-    letter-spacing: 0.02em;
-    color: var(--accent);
-    padding: 15px 0;
+    color: var(--bg);
   }
 
   /* ── Bottom group: contact + footer links ──────────────────── */
@@ -232,9 +176,6 @@
     .brands { gap: 36px; }
     .brands svg { height: 72px; }
     .bottom { padding-top: 44px; }
-    .contact form { flex-wrap: wrap; }
-    .contact input[type="email"] { flex: 1 1 180px; }
-    .contact button { flex: 1 1 auto; padding: 14px 22px; }
   }
 </style>
 </head>
@@ -345,11 +286,7 @@
   <!-- Bottom: contact widget above footer links -->
   <div class="bottom">
     <div class="contact">
-      <form id="contact-form" action="#" method="post" novalidate>
-        <input type="email" name="email" id="email" placeholder="Email address" required aria-label="Email address">
-        <button type="submit">Contact us</button>
-      </form>
-      <div class="confirm" id="confirm">Thank you. We'll be in touch.</div>
+      <a href="/contact">Contact us</a>
     </div>
 
     <nav class="footer-links" aria-label="Legal">
@@ -361,16 +298,6 @@
   </div>
 
 </main>
-
-<script>
-  document.getElementById('contact-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    var email = document.getElementById('email');
-    if (!email.checkValidity()) { email.reportValidity(); return; }
-    this.style.display = 'none';
-    document.getElementById('confirm').style.display = 'block';
-  });
-</script>
 
 </body>
 </html>
