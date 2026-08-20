@@ -1,16 +1,19 @@
-# Publish plans/, dixon/, evaluation/ to sibling GitHub Pages repos.
-# Source of truth stays this repo. Each subdomain is its own Pages site
-# (GitHub allows one custom domain per repo).
+# Publish plans/, dixon/, evaluation/ from this hub repo.
+# Source of truth stays this repo.
+# - plans.gude.co stays on GitHub Pages (HTTPS works there).
+# - dixon.gude.co and evaluation.gude.co are Cloudflare Pages
+#   (GitHub could not issue certificates for those two names).
 param(
   [string]$SiteRoot = (Split-Path $PSScriptRoot -Parent)
 )
 
 $ErrorActionPreference = "Stop"
 $owner = "gude-capital-devops"
+$cfAccount = "e2b58078be4f78935227733eeaea8ea7"
 $sites = @(
-  @{ Folder = "plans";      Repo = "gude-plans";      Domain = "plans.gude.co";      Description = "plans.gude.co — California Modular plan review" },
-  @{ Folder = "dixon";      Repo = "gude-dixon";      Domain = "dixon.gude.co";      Description = "dixon.gude.co — Dixon Engineering" },
-  @{ Folder = "evaluation"; Repo = "gude-evaluation"; Domain = "evaluation.gude.co"; Description = "evaluation.gude.co — Product READY" }
+  @{ Folder = "plans";      Repo = "gude-plans";      Domain = "plans.gude.co";      Host = "github";     Description = "plans.gude.co — California Modular plan review" },
+  @{ Folder = "dixon";      Repo = "gude-dixon";      Domain = "dixon.gude.co";      Host = "cloudflare"; Description = "dixon.gude.co — Dixon Engineering" },
+  @{ Folder = "evaluation"; Repo = "gude-evaluation"; Domain = "evaluation.gude.co"; Host = "cloudflare"; Description = "evaluation.gude.co — Product READY" }
 )
 
 function Ensure-Repo($name, $description) {
@@ -31,11 +34,14 @@ function Publish-Site($site) {
   New-Item -ItemType Directory -Path $stage | Out-Null
   Copy-Item (Join-Path $src "*") $stage -Recurse -Force
   Copy-Item (Join-Path $SiteRoot "brand") (Join-Path $stage "brand") -Recurse -Force
-  Set-Content -Path (Join-Path $stage "CNAME") -Value ($site.Domain + "`n") -NoNewline
+  Copy-Item (Join-Path $SiteRoot "favicon.ico") (Join-Path $stage "favicon.ico") -Force
+  if ($site.Host -eq "github") {
+    Set-Content -Path (Join-Path $stage "CNAME") -Value ($site.Domain + "`n") -NoNewline
+  }
   Set-Content -Path (Join-Path $stage ".nojekyll") -Value ""
   $index = Join-Path $stage "index.html"
   $html = Get-Content $index -Raw
-  $html = $html -replace 'href="../brand/theme.css"', 'href="brand/theme.css"'
+  $html = $html -replace 'href="../brand/', 'href="brand/'
   Set-Content -Path $index -Value $html -NoNewline
 
   Push-Location $stage
@@ -49,12 +55,18 @@ function Publish-Site($site) {
     Pop-Location
   }
 
-  $pagesOn = $false
-  cmd /c "gh api repos/$owner/$($site.Repo)/pages >nul 2>&1"
-  if ($LASTEXITCODE -eq 0) { $pagesOn = $true }
-  if (-not $pagesOn) {
-    Write-Host "enable Pages $($site.Repo)"
-    gh api "repos/$owner/$($site.Repo)/pages" -X POST -f "source[branch]=main" -f "source[path]=/" | Out-Null
+  if ($site.Host -eq "github") {
+    $pagesOn = $false
+    cmd /c "gh api repos/$owner/$($site.Repo)/pages >nul 2>&1"
+    if ($LASTEXITCODE -eq 0) { $pagesOn = $true }
+    if (-not $pagesOn) {
+      Write-Host "enable Pages $($site.Repo)"
+      gh api "repos/$owner/$($site.Repo)/pages" -X POST -f "source[branch]=main" -f "source[path]=/" | Out-Null
+    }
+  } else {
+    Write-Host "deploy Cloudflare Pages $($site.Repo)"
+    $env:CLOUDFLARE_ACCOUNT_ID = $cfAccount
+    npx --yes wrangler pages deploy $stage --project-name $site.Repo --branch main --commit-dirty=true
   }
 }
 
