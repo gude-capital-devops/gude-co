@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Gude">
+  <!-- White G on Crimson Field. Constructed letter: rounded left, square terminals, heavy bar. -->
+  <rect width="32" height="32" fill="#5A171B"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="4">
+    <path stroke-linecap="square" d="M23.5 8.25H12.25A3.75 3.75 0 0 1 8.5 12v8A3.75 3.75 0 0 1 12.25 23.75H23.5"/>
+    <path stroke-linecap="square" d="M15.5 14.75H24"/>
+  </g>
+</svg>
