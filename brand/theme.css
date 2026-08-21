@@ -255,6 +255,47 @@ body.lane .legal-doc li { margin-bottom: 8px; }
 .wordmark.wordmark-lg .logo-mark {
   height: 42px;
 }
+
+/* Lane photography — full-bleed after the hero, framed photo in white bands */
+.bleed-photo {
+  margin: 0;
+  background: var(--garnet-black);
+}
+.bleed-photo img {
+  display: block;
+  width: 100%;
+  height: min(46vh, 440px);
+  object-fit: cover;
+  object-position: center 48%;
+}
+.bleed-photo figcaption {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 12px 40px 16px;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.55);
+}
+.band-photo {
+  margin: 0 0 36px;
+}
+.band-photo img {
+  display: block;
+  width: 100%;
+  height: min(36vh, 300px);
+  object-fit: cover;
+  border-radius: 8px;
+}
+.band-photo figcaption {
+  padding: 12px 0 0;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: var(--iron-ash);
+  background: transparent;
+}
+@media (max-width: 520px) {
+  .bleed-photo figcaption { padding: 12px 24px 16px; }
+}
 .site-footer .footer-mark .logo-mark {
   height: 22px;
 }
