@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — Gude</title>
-<meta name="description" content="Contact Gude for evaluation, engineering, or plan review. General inquiries: office@gude.co.">
+<meta name="description" content="Contact Gude for evaluation, engineering, or plan review.">
 <link rel="stylesheet" href="../brand/theme.css">
 <link rel="icon" href="../brand/favicon.svg?v=4" type="image/svg+xml">
 <link rel="icon" href="../brand/favicon.ico?v=4" sizes="16x16 32x32">
@@ -70,22 +70,6 @@
     padding-bottom: 10px;
     border-bottom: 2px solid var(--garnet-black);
   }
-  .office-mail {
-    display: block;
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    color: var(--garnet-black);
-    text-decoration: none;
-    margin-bottom: 8px;
-  }
-  .office-mail:hover { color: var(--port-red); }
-  .block-note {
-    font-size: 14px;
-    color: var(--iron-ash);
-    max-width: 520px;
-  }
-
   .inquiry-form {
     display: grid;
     gap: 18px;
@@ -162,10 +146,6 @@
 
   .people { display: grid; gap: 0; border-top: 1px solid #E4DCDC; }
   .person {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 8px 24px;
-    align-items: baseline;
     padding: 22px 0;
     border-bottom: 1px solid #E4DCDC;
   }
@@ -176,28 +156,16 @@
     color: var(--garnet-black);
   }
   .person .title {
-    grid-column: 1;
+    margin-top: 6px;
     font-size: 12px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--iron-ash);
   }
-  .person .email {
-    grid-column: 2;
-    grid-row: 1 / span 2;
-    align-self: center;
-    font-size: 14px;
-    color: var(--port-red);
-    text-decoration: none;
-    letter-spacing: 0.01em;
-  }
-  .person .email:hover { color: var(--signal-red); }
 
   @media (max-width: 640px) {
     .wrap { padding: 0 24px; }
     .form-row { grid-template-columns: 1fr; }
-    .person { grid-template-columns: 1fr; }
-    .person .email { grid-column: 1; grid-row: auto; }
   }
 </style>
 </head>
@@ -217,12 +185,6 @@
     <div class="contact-page">
       <h1>CONTACT</h1>
       <p class="kicker">Evaluation · Engineering · Plan Review</p>
-
-      <section class="block" aria-labelledby="inq-label">
-        <h2 id="inq-label" class="block-label">General inquiries</h2>
-        <a class="office-mail" href="mailto:office@gude.co">office@gude.co</a>
-        <p class="block-note">Write the office for new work, referrals, and administrative correspondence. Direct messages to a person listed below are also received.</p>
-      </section>
 
       <section class="block" aria-labelledby="form-label">
         <h2 id="form-label" class="block-label">Inquiry</h2>
@@ -257,12 +219,10 @@
           <article class="person">
             <div class="name">Anthony Gude</div>
             <div class="title">Managing Principal</div>
-            <a class="email" href="mailto:agude@gude.co">agude@gude.co</a>
           </article>
           <article class="person">
             <div class="name">Phillip Dixon, P.E.</div>
             <div class="title">Principal Engineer</div>
-            <a class="email" href="mailto:phillip@gude.co">phillip@gude.co</a>
           </article>
         </div>
       </section>
@@ -308,7 +268,7 @@
       var subject = encodeURIComponent('Inquiry — ' + name.value.trim());
       window.location.href = 'mailto:office@gude.co?subject=' + subject + '&body=' + encodeURIComponent(body);
       statusEl.style.display = 'block';
-      statusEl.textContent = 'Opening your email application addressed to office@gude.co. Send the message to complete the inquiry.';
+      statusEl.textContent = 'Opening your email application. Send the message to complete the inquiry.';
     });
   })();
 </script>
