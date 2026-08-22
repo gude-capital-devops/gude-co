@@ -568,7 +568,7 @@
       </div>
       <h1 id="hero-title">Verify Your Plans Are Code-Compliant</h1>
       <p class="lede">California Modular (CMDAA) provides independent plan review for modular, manufactured, and off-site construction. Our accredited reviewers help jurisdictions, manufacturers, and design teams confirm compliance before permits — with the rigor certification demands and the pace your project requires.</p>
-      <a class="btn" href="mailto:office@gude.co?subject=Plan%20Review%20Request">Request Plan Review</a>
+      <a class="btn" href="#intake-checklist">Request Plan Review</a>
       <a class="btn btn-outline" href="#intake-checklist">Start Intake Checklist</a>
     </div>
   </div>
@@ -724,14 +724,15 @@
     </div>
     <p class="intro" style="text-align: center; margin-left: auto; margin-right: auto;">Mark each checklist you are including in your submittal package. Download the PDFs, complete the applicable forms, then submit your intake below — our team will confirm scope and next steps.</p>
 
-    <form id="intake-checklist" class="intake-form" novalidate>
+    <form id="intake-checklist" class="intake-form" data-intake="plans" data-intake-subject="Plan Review intake — CMDAA" novalidate>
+      <input class="intake-hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="intake-rows" role="group" aria-labelledby="docs-title">
         <div class="intake-row intake-row-select-all">
           <div class="intake-doc">
             <span class="label">Select all categories</span>
           </div>
           <label class="intake-check">
-            <input type="checkbox" id="intake-select-all" aria-label="Select all categories">
+            <input type="checkbox" id="intake-select-all" data-intake-select-all aria-label="Select all categories">
             <span>Select all</span>
           </label>
         </div>
@@ -744,7 +745,7 @@
             </span>
           </div>
           <label class="intake-check">
-            <input type="checkbox" name="doc" value="Building and construction documents" class="intake-doc-check">
+            <input type="checkbox" name="doc" value="Building and construction documents" class="intake-doc-check" data-intake-check>
             <span>In package</span>
           </label>
         </div>
@@ -759,7 +760,7 @@
             </span>
           </div>
           <label class="intake-check">
-            <input type="checkbox" name="doc" value="Mechanical, electrical, and plumbing" class="intake-doc-check">
+            <input type="checkbox" name="doc" value="Mechanical, electrical, and plumbing" class="intake-doc-check" data-intake-check>
             <span>In package</span>
           </label>
         </div>
@@ -772,7 +773,7 @@
             </span>
           </div>
           <label class="intake-check">
-            <input type="checkbox" name="doc" value="Sprinkler and accessibility" class="intake-doc-check">
+            <input type="checkbox" name="doc" value="Sprinkler and accessibility" class="intake-doc-check" data-intake-check>
             <span>In package</span>
           </label>
         </div>
@@ -784,7 +785,7 @@
             </span>
           </div>
           <label class="intake-check">
-            <input type="checkbox" name="doc" value="Specialty drawings, structural" class="intake-doc-check">
+            <input type="checkbox" name="doc" value="Specialty drawings, structural" class="intake-doc-check" data-intake-check>
             <span>In package</span>
           </label>
         </div>
@@ -798,11 +799,11 @@
 
       <div class="intake-actions">
         <button type="submit" class="btn">Submit Intake Checklist</button>
-        <p class="intake-confirm" id="intake-confirm" role="status"></p>
+        <p class="intake-confirm" id="intake-confirm" data-intake-confirm role="status"></p>
       </div>
     </form>
 
-    <p class="docs-note">Reference forms adapted from industry-standard plan review intake checklists. Attach completed PDFs when you reply, or transmit through your project portal if already engaged with CMDAA.</p>
+    <p class="docs-note">The form is sent to office@gude.co. Download and complete the PDFs as needed; transmitting documents does not start a professional engagement.</p>
   </div>
 </section>
 
@@ -833,82 +834,7 @@
 </footer>
 
 <script src="../brand/carousel.js"></script>
-<script>
-  (function () {
-    var form = document.getElementById('intake-checklist');
-    var confirmEl = document.getElementById('intake-confirm');
-    var selectAll = document.getElementById('intake-select-all');
-    var docChecks = form.querySelectorAll('.intake-doc-check');
-
-    function syncSelectAll() {
-      var allChecked = docChecks.length > 0 && Array.prototype.every.call(docChecks, function (cb) {
-        return cb.checked;
-      });
-      selectAll.checked = allChecked;
-      selectAll.indeterminate = !allChecked && Array.prototype.some.call(docChecks, function (cb) {
-        return cb.checked;
-      });
-    }
-
-    selectAll.addEventListener('change', function () {
-      Array.prototype.forEach.call(docChecks, function (cb) {
-        cb.checked = selectAll.checked;
-      });
-      selectAll.indeterminate = false;
-    });
-
-    Array.prototype.forEach.call(docChecks, function (cb) {
-      cb.addEventListener('change', syncSelectAll);
-    });
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      var project = document.getElementById('intake-project');
-      var email = document.getElementById('intake-email');
-      var jurisdiction = document.getElementById('intake-jurisdiction');
-
-      if (!project.checkValidity() || !email.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-
-      var checked = form.querySelectorAll('input[name="doc"]:checked');
-      if (checked.length === 0) {
-        confirmEl.textContent = 'Select at least one checklist item included in your package.';
-        confirmEl.style.display = 'block';
-        confirmEl.style.borderColor = 'var(--hairline)';
-        return;
-      }
-
-      var docs = Array.prototype.map.call(checked, function (cb) {
-        return '• ' + cb.value;
-      }).join('\n');
-
-      var body = [
-        'Plan review intake checklist',
-        '',
-        'Project: ' + project.value.trim(),
-        'From: ' + email.value.trim(),
-        jurisdiction.value.trim() ? 'Jurisdiction: ' + jurisdiction.value.trim() : '',
-        '',
-        'Documents included in package:',
-        docs,
-        '',
-        'I will attach completed checklist PDFs in a follow-up message.'
-      ].filter(Boolean).join('\n');
-
-      var subject = encodeURIComponent('Plan Review Intake — ' + project.value.trim());
-      var mailBody = encodeURIComponent(body);
-
-      window.location.href = 'mailto:office@gude.co?subject=' + subject + '&body=' + mailBody;
-
-      confirmEl.textContent = 'Opening your email client with the intake summary. Attach your completed PDFs before sending.';
-      confirmEl.style.display = 'block';
-      confirmEl.style.borderColor = 'var(--accent-border)';
-    });
-  })();
-</script>
+<script src="../brand/intake.js"></script>
 
 </body>
 </html>

@@ -448,7 +448,7 @@
       <h1 id="hero-title">Multidisciplinary Engineering Services</h1>
       <p class="lede">Dixon Engineering provides licensed structural and multidisciplinary engineering for design-build firms at production scale: governed detail libraries, calculation packages by system and element, internal plan review, and permitting support with Professional Engineer sign-off.</p>
       <div class="hero-actions">
-        <a class="btn" href="mailto:office@gude.co?subject=Dixon%20Engineering%20%E2%80%94%20Services%20Inquiry">Discuss Your Firm</a>
+        <a class="btn" href="#engineering-intake">Discuss Your Firm</a>
         <a class="btn btn-outline" href="#exemplar">See Client Exemplar</a>
       </div>
       <blockquote class="hero-quote">
@@ -593,15 +593,83 @@
   </div>
 </section>
 
+<section class="band-light" id="engineering-intake" aria-labelledby="eng-intake-title">
+  <div class="wrap">
+    <div class="section-label">
+      <span class="line"></span>
+      <h2 id="eng-intake-title">Engineering intake</h2>
+      <span class="line"></span>
+    </div>
+    <p class="intro photo-copy">Mark the licensed services you need. Submit the form and we will reply from office@gude.co.</p>
+    <form class="intake-form" data-intake="engineering" data-intake-subject="Engineering intake — Dixon Engineering" novalidate>
+      <input class="intake-hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="intake-rows" role="group" aria-labelledby="eng-intake-title">
+        <div class="intake-row intake-row-select-all">
+          <div class="intake-doc"><span class="label">Select all that apply</span></div>
+          <label class="intake-check">
+            <input type="checkbox" data-intake-select-all aria-label="Select all that apply">
+            <span>Select all</span>
+          </label>
+        </div>
+        <div class="intake-row">
+          <div class="intake-doc"><span class="label">Structural detail library</span></div>
+          <label class="intake-check">
+            <input type="checkbox" name="scope" value="Structural detail library" data-intake-check>
+            <span>Needed</span>
+          </label>
+        </div>
+        <div class="intake-row">
+          <div class="intake-doc"><span class="label">Calculation packages by system and element</span></div>
+          <label class="intake-check">
+            <input type="checkbox" name="scope" value="Calculation packages by system and element" data-intake-check>
+            <span>Needed</span>
+          </label>
+        </div>
+        <div class="intake-row">
+          <div class="intake-doc"><span class="label">Internal plan review</span></div>
+          <label class="intake-check">
+            <input type="checkbox" name="scope" value="Internal plan review" data-intake-check>
+            <span>Needed</span>
+          </label>
+        </div>
+        <div class="intake-row">
+          <div class="intake-doc"><span class="label">Permitting support</span></div>
+          <label class="intake-check">
+            <input type="checkbox" name="scope" value="Permitting support" data-intake-check>
+            <span>Needed</span>
+          </label>
+        </div>
+        <div class="intake-row">
+          <div class="intake-doc"><span class="label">Production-firm / portfolio engagement</span></div>
+          <label class="intake-check">
+            <input type="checkbox" name="scope" value="Production-firm / portfolio engagement" data-intake-check>
+            <span>Needed</span>
+          </label>
+        </div>
+      </div>
+      <div class="intake-meta">
+        <input type="text" name="organization" placeholder="Firm name" required aria-label="Firm name">
+        <input type="email" name="email" placeholder="Your email" required aria-label="Your email">
+        <input type="text" name="project" class="full" placeholder="Project or production context" required aria-label="Project">
+        <input type="text" name="jurisdiction" class="full" placeholder="Jurisdiction (optional)" aria-label="Jurisdiction">
+        <textarea name="notes" class="full" placeholder="Notes (optional)" aria-label="Notes"></textarea>
+      </div>
+      <div class="intake-actions">
+        <button type="submit" class="btn">Submit Engineering Intake</button>
+        <p class="intake-confirm" data-intake-confirm role="status"></p>
+      </div>
+    </form>
+    <p class="docs-note">The form is sent to office@gude.co. Submitting it does not start a professional engagement.</p>
+  </div>
+</section>
+
 <section class="cta-band" aria-labelledby="cta-title">
   <div class="wrap">
     <h2 id="cta-title">Licensed Engineering for Production Firms</h2>
     <p>Contact Dixon Engineering about licensed multidisciplinary services for your detail library, calculation packages, and permitting workflow.</p>
-    <a class="btn" href="mailto:office@gude.co?subject=Dixon%20Engineering%20%E2%80%94%20Services%20Inquiry">Contact Dixon Engineering</a>
+    <a class="btn" href="#engineering-intake">Submit Engineering Intake</a>
     <div class="contact-block">
       <strong>Dixon Engineering — Licensed Professional Engineering, a Gude company</strong><br>
-      Phillip Dixon, P.E.<br>
-      Email: <a href="mailto:office@gude.co">office@gude.co</a><br>
       Parent: <a href="https://gude.co">gude.co</a>
     </div>
   </div>
@@ -624,6 +692,7 @@
 </footer>
 
 <script src="../brand/carousel.js"></script>
+<script src="../brand/intake.js"></script>
 
 </body>
 </html>
