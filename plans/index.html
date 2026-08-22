@@ -585,31 +585,32 @@
       <img src="images/review.jpg" alt="Architectural floor plans and elevations spread on a review table" width="1800" height="1012" loading="lazy">
       <figcaption>Independent review of the drawings before they leave for the authority having jurisdiction.</figcaption>
     </figure>
-    <div class="benefits">
-      <article class="benefit">
-        <svg class="icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect x="4" y="8" width="36" height="28" rx="3" stroke="currentColor" stroke-width="2"/>
-          <path d="M4 16h36M14 8V36M30 8V36" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
-        </svg>
-        <h3>Flexible Coverage</h3>
-        <p>Supplement your jurisdiction or in-house team without adding headcount. We scale from single-discipline checks to full multi-trade reviews for commercial and residential modular projects.</p>
-      </article>
-      <article class="benefit">
-        <svg class="icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="22" cy="22" r="16" stroke="currentColor" stroke-width="2"/>
-          <path d="M22 12v10l7 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-        <h3>Responsive Turnaround</h3>
-        <p>Permit schedules do not wait. We prioritize clear communication, defined review windows, and actionable correction lists so you can iterate plans and keep factory and site timelines on track.</p>
-      </article>
-      <article class="benefit">
-        <svg class="icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M8 34l12-14 8 8 8-10 8 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <rect x="6" y="6" width="32" height="32" rx="3" stroke="currentColor" stroke-width="2"/>
-        </svg>
-        <h3>Code-Seasoned Reviewers</h3>
-        <p>Our plan review staff includes professionals with deep experience in model codes, California amendments, and factory-built housing — the same disciplines jurisdictions expect at final submittal.</p>
-      </article>
+    <div class="cover-carousel cover-fit" data-carousel data-interval="3500">
+      <button type="button" class="cover-nav cover-prev" data-carousel-prev aria-label="Previous slide">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 2.5L5 8l5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg>
+      </button>
+      <div class="cover-frame" aria-live="off">
+        <article class="cover-slide is-active" data-slide>
+          <h3>Flexible Coverage</h3>
+          <p>Supplement your jurisdiction or in-house team without adding headcount. We scale from single-discipline checks to full multi-trade reviews for commercial and residential modular projects.</p>
+        </article>
+        <article class="cover-slide" data-slide aria-hidden="true">
+          <h3>Responsive Turnaround</h3>
+          <p>Permit schedules do not wait. We prioritize clear communication, defined review windows, and actionable correction lists so you can iterate plans and keep factory and site timelines on track.</p>
+        </article>
+        <article class="cover-slide" data-slide aria-hidden="true">
+          <h3>Code-Seasoned Reviewers</h3>
+          <p>Our plan review staff includes professionals with deep experience in model codes, California amendments, and factory-built housing — the same disciplines jurisdictions expect at final submittal.</p>
+        </article>
+      </div>
+      <button type="button" class="cover-nav cover-next" data-carousel-next aria-label="Next slide">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 2.5L11 8l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg>
+      </button>
+      <div class="cover-dots" role="tablist" aria-label="Carousel slides">
+        <button type="button" class="cover-dot" data-carousel-dot aria-label="Show flexible coverage" aria-current="true"></button>
+        <button type="button" class="cover-dot" data-carousel-dot aria-label="Show responsive turnaround"></button>
+        <button type="button" class="cover-dot" data-carousel-dot aria-label="Show code-seasoned reviewers"></button>
+      </div>
     </div>
     <p class="staff-note">CMDAA plan reviewers are qualified across the disciplines your project requires. Whether you are preparing a preliminary submittal or a complete construction document package, we apply consistent checklists and documented findings you can carry forward to permitting authorities.</p>
   </div>
@@ -831,6 +832,7 @@
   </div>
 </footer>
 
+<script src="../brand/carousel.js"></script>
 <script>
   (function () {
     var form = document.getElementById('intake-checklist');

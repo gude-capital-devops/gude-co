@@ -195,6 +195,7 @@
     max-width: 820px;
     margin-bottom: 28px;
   }
+  .intro-tight { margin-bottom: 16px; }
 
   .stat-strip {
     display: grid;
@@ -467,24 +468,38 @@
       <img src="images/detail.jpg" alt="Bolted steel knife plate connecting a heavy timber beam" width="1800" height="1012" loading="lazy">
       <figcaption>Connection details of the kind a governed library captures once and reuses.</figcaption>
     </figure>
-    <p class="intro">Licensed engineering services that build across your project portfolio. Each engagement expands a governed library your team and our Professional Engineers can sign on the next permit cycle.</p>
-    <div class="deliver-grid">
-      <article class="deliver">
-        <h3>Structural Detail Library</h3>
-        <p>A governed set of construction details aligned to how your crews build: connections, members, foundations, and assemblies your designers call by name every permit cycle.</p>
-      </article>
-      <article class="deliver">
-        <h3>Calculation Packages by System and Element</h3>
-        <p>Licensed calculation packages organized by <strong>system</strong> (freestanding pergola, patio cover, retaining wall) and by <strong>element</strong> (post base, beam splice, knee brace). Peer-review-ready outputs prepared for Professional Engineer review and stamp.</p>
-      </article>
-      <article class="deliver">
-        <h3>Internal Plan Review</h3>
-        <p>Licensed internal plan review before jurisdiction submittal: checklist findings, correction lists, and Professional Engineer sign-off criteria on a defined schedule.</p>
-      </article>
-      <article class="deliver">
-        <h3>Permitting Support</h3>
-        <p>Licensed engineering documentation aligned to authority expectations: calculation narratives, marked-up plans, and detail references tied to your permit library.</p>
-      </article>
+    <p class="intro intro-tight">Licensed engineering services that build across your project portfolio. Each engagement expands a governed library your team and our Professional Engineers can sign on the next permit cycle.</p>
+    <div class="cover-carousel cover-fit" data-carousel data-interval="3500">
+      <button type="button" class="cover-nav cover-prev" data-carousel-prev aria-label="Previous slide">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 2.5L5 8l5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg>
+      </button>
+      <div class="cover-frame" aria-live="off">
+        <article class="cover-slide is-active" data-slide>
+          <h3>Structural Detail Library</h3>
+          <p>A governed set of construction details aligned to how your crews build: connections, members, foundations, and assemblies your designers call by name every permit cycle.</p>
+        </article>
+        <article class="cover-slide" data-slide aria-hidden="true">
+          <h3>Calculation Packages by System and Element</h3>
+          <p>Licensed calculation packages organized by <strong>system</strong> (freestanding pergola, patio cover, retaining wall) and by <strong>element</strong> (post base, beam splice, knee brace). Peer-review-ready outputs prepared for Professional Engineer review and stamp.</p>
+        </article>
+        <article class="cover-slide" data-slide aria-hidden="true">
+          <h3>Internal Plan Review</h3>
+          <p>Licensed internal plan review before jurisdiction submittal: checklist findings, correction lists, and Professional Engineer sign-off criteria on a defined schedule.</p>
+        </article>
+        <article class="cover-slide" data-slide aria-hidden="true">
+          <h3>Permitting Support</h3>
+          <p>Licensed engineering documentation aligned to authority expectations: calculation narratives, marked-up plans, and detail references tied to your permit library.</p>
+        </article>
+      </div>
+      <button type="button" class="cover-nav cover-next" data-carousel-next aria-label="Next slide">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 2.5L11 8l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg>
+      </button>
+      <div class="cover-dots" role="tablist" aria-label="Carousel slides">
+        <button type="button" class="cover-dot" data-carousel-dot aria-label="Show structural detail library" aria-current="true"></button>
+        <button type="button" class="cover-dot" data-carousel-dot aria-label="Show calculation packages"></button>
+        <button type="button" class="cover-dot" data-carousel-dot aria-label="Show internal plan review"></button>
+        <button type="button" class="cover-dot" data-carousel-dot aria-label="Show permitting support"></button>
+      </div>
     </div>
   </div>
 </section>
@@ -605,6 +620,8 @@
     </div>
   </div>
 </footer>
+
+<script src="../brand/carousel.js"></script>
 
 </body>
 </html>
