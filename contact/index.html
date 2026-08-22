@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — Gude</title>
-<meta name="description" content="Contact Gude for evaluation, engineering, or plan review.">
+<meta name="description" content="Contact Gude for evaluation, engineering, or plan review. General inquiries: office@gude.co.">
 <link rel="stylesheet" href="../brand/theme.css">
 <link rel="icon" href="../brand/favicon.svg?v=4" type="image/svg+xml">
 <link rel="icon" href="../brand/favicon.ico?v=4" sizes="16x16 32x32">
@@ -70,6 +70,22 @@
     padding-bottom: 10px;
     border-bottom: 2px solid var(--garnet-black);
   }
+  .office-mail {
+    display: block;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--garnet-black);
+    text-decoration: none;
+    margin-bottom: 8px;
+  }
+  .office-mail:hover { color: var(--port-red); }
+  .block-note {
+    font-size: 14px;
+    color: var(--iron-ash);
+    max-width: 520px;
+  }
+
   .inquiry-form {
     display: grid;
     gap: 18px;
@@ -186,6 +202,12 @@
       <h1>CONTACT</h1>
       <p class="kicker">Evaluation · Engineering · Plan Review</p>
 
+      <section class="block" aria-labelledby="inq-label">
+        <h2 id="inq-label" class="block-label">General inquiries</h2>
+        <a class="office-mail" href="mailto:office@gude.co">office@gude.co</a>
+        <p class="block-note">Write the office for new work, referrals, and administrative correspondence. The form below reaches the same inbox.</p>
+      </section>
+
       <section class="block" aria-labelledby="form-label">
         <h2 id="form-label" class="block-label">Inquiry</h2>
         <form class="inquiry-form" id="inquiry-form" novalidate>
@@ -268,7 +290,7 @@
       var subject = encodeURIComponent('Inquiry — ' + name.value.trim());
       window.location.href = 'mailto:office@gude.co?subject=' + subject + '&body=' + encodeURIComponent(body);
       statusEl.style.display = 'block';
-      statusEl.textContent = 'Opening your email application. Send the message to complete the inquiry.';
+      statusEl.textContent = 'Opening your email application addressed to office@gude.co. Send the message to complete the inquiry.';
     });
   })();
 </script>
