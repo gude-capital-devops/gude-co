@@ -395,6 +395,15 @@ body.lane .legal-doc li { margin-bottom: 8px; }
   width: 100%;
   max-width: none;
 }
+.form-block .section-label {
+  justify-content: center;
+}
+.form-block .intro {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
 
 .intake-form {
   max-width: 720px;
