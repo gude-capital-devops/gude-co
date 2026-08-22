@@ -106,13 +106,13 @@
           if (result.ok && result.data && result.data.success !== "false") {
             form.reset();
             syncSelectAll();
-            showStatus("Received. We will reply from office@gude.co if a next step is needed.", false);
+            showStatus("Received. We will reply if a next step is needed.", false);
             return;
           }
           throw new Error((result.data && result.data.message) || "Send failed");
         })
         .catch(function () {
-          showStatus("The form could not be sent. Try again, or write office@gude.co if it keeps failing.", true);
+          showStatus("The form could not be sent. Try again, or use the Contact page if it keeps failing.", true);
         })
         .then(function () {
           if (submitBtn) {
