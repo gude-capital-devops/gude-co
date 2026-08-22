@@ -117,27 +117,107 @@
   .intro {
     font-size: 15px;
     color: var(--muted);
-    max-width: 820px;
-    margin-bottom: 28px;
+    max-width: none;
+    margin-bottom: 36px;
   }
-  .benefits {
+  .nobr { white-space: nowrap; }
+
+  .cover-carousel {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    grid-template-columns: 44px minmax(0, 460px) 44px;
+    grid-template-rows: auto auto;
+    justify-content: center;
+    align-items: center;
+    column-gap: 16px;
+    row-gap: 18px;
+    max-width: 580px;
+    margin: 0 auto;
   }
-  .benefit {
-    border: 1px solid var(--card-border);
+  .cover-frame {
+    grid-column: 2;
+    grid-row: 1;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    border: 1px solid #E4DCDC;
     border-radius: 8px;
-    padding: 28px 24px;
-    background: rgba(255, 255, 255, 0.02);
+    background: #FFFFFF;
+    overflow: hidden;
   }
-  .benefit h3 {
-    font-size: 15px;
+  .cover-slide {
+    position: absolute;
+    inset: 0;
+    padding: 40px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 0.7s ease;
+    pointer-events: none;
+  }
+  .cover-slide.is-active {
+    opacity: 1;
+    z-index: 1;
+    pointer-events: auto;
+  }
+  .cover-slide h3 {
+    font-size: 18px;
     letter-spacing: 0.04em;
-    margin-bottom: 10px;
-    color: var(--ink);
+    margin-bottom: 14px;
+    color: var(--garnet-black);
   }
-  .benefit p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+  .cover-slide p {
+    font-size: 15px;
+    color: var(--iron-ash);
+    line-height: 1.65;
+  }
+  .cover-nav {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid #D0C8C8;
+    background: #FFFFFF;
+    color: var(--port-red);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+  }
+  .cover-nav:hover,
+  .cover-nav:focus-visible {
+    border-color: var(--port-red);
+    background: #FAF7F7;
+    color: var(--crimson-field);
+    outline: none;
+  }
+  .cover-prev { grid-column: 1; grid-row: 1; }
+  .cover-next { grid-column: 3; grid-row: 1; }
+  .cover-dots {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  .cover-dot {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid var(--port-red);
+    background: transparent;
+    cursor: pointer;
+  }
+  .cover-dot[aria-current="true"] {
+    background: var(--port-red);
+  }
+  .cover-dot:focus-visible {
+    outline: 2px solid var(--port-red);
+    outline-offset: 3px;
+  }
   .cta-band {
     background: var(--bg-band);
     border-top: 1px solid var(--hairline);
@@ -162,11 +242,19 @@
   @media (max-width: 900px) {
     .hero .wrap { grid-template-columns: 1fr; }
     .hero-mark { order: -1; }
-    .benefits { grid-template-columns: 1fr; }
   }
   @media (max-width: 520px) {
     .wrap { padding: 0 24px; }
     section { padding: 48px 0; }
+    .cover-carousel {
+      grid-template-columns: 36px minmax(0, 1fr) 36px;
+      column-gap: 8px;
+    }
+    .cover-nav { width: 36px; height: 36px; }
+    .cover-slide { padding: 28px 22px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cover-slide { transition: none; }
   }
 </style>
 </head>
@@ -222,20 +310,33 @@
       <img src="images/evidence.jpg" alt="Wall assembly on a laboratory test frame with sensors along the edge" width="1800" height="1012" loading="lazy">
       <figcaption>The evidence path starts with the assembly itself — tests, listings, and installation limits.</figcaption>
     </figure>
-    <p class="intro">Manufacturers and design teams need a defensible record before a product or assembly goes into a permit set. Product READY organizes that record.</p>
-    <div class="benefits">
-      <article class="benefit">
-        <h3>Evidence gaps</h3>
-        <p>Identify what a jurisdiction will ask for — tests, listings, engineering, and installation limits — before submittal.</p>
-      </article>
-      <article class="benefit">
-        <h3>Code path</h3>
-        <p>Map the product to the applicable code sections and alternate methods so reviewers can follow the argument.</p>
-      </article>
-      <article class="benefit">
-        <h3>Toward certification</h3>
-        <p>Structure the file so it can grow into a listing or evaluation report when the product is ready for that step.</p>
-      </article>
+    <p class="intro">Manufacturers and design teams need a defensible record before a product or assembly goes into a permit set. <span class="nobr">Product READY</span> organizes that record.</p>
+    <div class="cover-carousel" data-carousel>
+      <button type="button" class="cover-nav cover-prev" data-carousel-prev aria-label="Previous slide">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 2.5L5 8l5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg>
+      </button>
+      <div class="cover-frame" aria-live="off">
+        <article class="cover-slide is-active" data-slide>
+          <h3>Evidence gaps</h3>
+          <p>Identify what a jurisdiction will ask for — tests, listings, engineering, and installation limits — before submittal.</p>
+        </article>
+        <article class="cover-slide" data-slide aria-hidden="true">
+          <h3>Code path</h3>
+          <p>Map the product to the applicable code sections and alternate methods so reviewers can follow the argument.</p>
+        </article>
+        <article class="cover-slide" data-slide aria-hidden="true">
+          <h3>Toward certification</h3>
+          <p>Structure the file so it can grow into a listing or evaluation report when the product is ready for that step.</p>
+        </article>
+      </div>
+      <button type="button" class="cover-nav cover-next" data-carousel-next aria-label="Next slide">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 2.5L11 8l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg>
+      </button>
+      <div class="cover-dots" role="tablist" aria-label="Carousel slides">
+        <button type="button" class="cover-dot" data-carousel-dot aria-label="Show evidence gaps" aria-current="true"></button>
+        <button type="button" class="cover-dot" data-carousel-dot aria-label="Show code path"></button>
+        <button type="button" class="cover-dot" data-carousel-dot aria-label="Show toward certification"></button>
+      </div>
     </div>
   </div>
 </section>
@@ -268,6 +369,75 @@
     </div>
   </div>
 </footer>
+
+<script>
+  (function () {
+    var root = document.querySelector("[data-carousel]");
+    if (!root) return;
+
+    var slides = root.querySelectorAll("[data-slide]");
+    var dots = root.querySelectorAll("[data-carousel-dot]");
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var index = 0;
+    var timer = null;
+    var delay = 5000;
+
+    function show(next) {
+      index = (next + slides.length) % slides.length;
+      for (var i = 0; i < slides.length; i++) {
+        var on = i === index;
+        slides[i].classList.toggle("is-active", on);
+        slides[i].setAttribute("aria-hidden", on ? "false" : "true");
+        if (dots[i]) {
+          if (on) dots[i].setAttribute("aria-current", "true");
+          else dots[i].removeAttribute("aria-current");
+        }
+      }
+    }
+
+    function start() {
+      if (reduce || timer) return;
+      timer = window.setInterval(function () { show(index + 1); }, delay);
+    }
+
+    function stop() {
+      if (!timer) return;
+      window.clearInterval(timer);
+      timer = null;
+    }
+
+    function restart() {
+      stop();
+      start();
+    }
+
+    root.querySelector("[data-carousel-prev]").addEventListener("click", function () {
+      show(index - 1);
+      restart();
+    });
+    root.querySelector("[data-carousel-next]").addEventListener("click", function () {
+      show(index + 1);
+      restart();
+    });
+    for (var d = 0; d < dots.length; d++) {
+      (function (n) {
+        dots[n].addEventListener("click", function () {
+          show(n);
+          restart();
+        });
+      })(d);
+    }
+
+    root.addEventListener("mouseenter", stop);
+    root.addEventListener("mouseleave", start);
+    root.addEventListener("focusin", stop);
+    root.addEventListener("focusout", function (e) {
+      if (!root.contains(e.relatedTarget)) start();
+    });
+
+    start();
+  })();
+</script>
 
 </body>
 </html>
