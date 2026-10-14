@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found — Gude</title>
+<link rel="stylesheet" href="/brand/theme.css">
+<script>
+(function () {
+  var m = location.pathname.match(/^\/verify\/([^/?#]+)\/?$/i);
+  if (m) {
+    var code = decodeURIComponent(m[1]);
+    location.replace('/verify/?n=' + encodeURIComponent(code));
+  }
+})();
+</script>
+<style>
+  body { font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 48px 24px; text-align: center; background: var(--crimson-field); color: var(--white); }
+  a { color: var(--field-muted); }
+  h1 { font-size: 22px; letter-spacing: 0.08em; margin-bottom: 12px; }
+  p { color: var(--field-muted); max-width: 28em; margin: 0 auto 24px; line-height: 1.55; }
+</style>
+</head>
+<body class="lane">
+<h1>Page not found</h1>
+<p>The page you requested is not on gude.co. If you scanned a stamp verification QR code, try opening the link again or contact <a href="mailto:office@gude.co">office@gude.co</a>.</p>
+<p><a href="https://gude.co">Return to gude.co</a></p>
+</body>
+</html>

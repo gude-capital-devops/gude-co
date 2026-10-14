@@ -1,0 +1,36 @@
+{
+  "peDefaults": {
+    "name": "Phillip Dixon, P.E.",
+    "role": "Professional Engineer in Responsible Charge",
+    "licenses": [
+      { "state": "CA", "number": "C84323" },
+      { "state": "IA", "number": "P29147" },
+      { "state": "NY", "number": "089602" }
+    ]
+  },
+  "firm": {
+    "name": "Gude",
+    "url": "https://gude.co"
+  },
+  "sets": [
+    {
+      "code": "PROTO-2026-10-13-001",
+      "sample": true,
+      "projectName": "Prototype sample sheet",
+      "projectAddress": "Demonstration only — not a real project site",
+      "client": "Sample client (for QR verification demo)",
+      "sheetSetDescription": "Structural detail sheet — verification prototype",
+      "revision": "Rev 0",
+      "issueDate": "2026-10-13",
+      "status": "Current",
+      "pe": {
+        "name": "Phillip Dixon, P.E.",
+        "licenses": [
+          { "state": "CA", "number": "C84323" },
+          { "state": "IA", "number": "P29147" },
+          { "state": "NY", "number": "089602" }
+        ]
+      }
+    }
+  ]
+}
